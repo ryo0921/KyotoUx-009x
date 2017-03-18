@@ -1,0 +1,260 @@
+1
+00:00:11,160 --> 00:00:17,560
+In this course, we will use the Jupyter notebook as our programming environment.
+
+2
+00:00:17,560 --> 00:00:25,480
+It is freely available for Windows, Mac, and Linux through the Anaconda Python Distribution.
+
+3
+00:00:25,480 --> 00:00:33,360
+In this plot, I will explain how to install and use the Jupyter notebook in a step-by-step manner
+
+4
+00:00:33,360 --> 00:00:40,000
+to create some common visualizations that we will use throughout this course.
+
+5
+00:00:43,760 --> 00:00:46,800
+Let us now install Anaconda.
+
+6
+00:00:46,800 --> 00:00:51,680
+First, visit the download page of the official Anaconda website
+
+7
+00:00:51,680 --> 00:00:59,940
+and download the latest version of the Python-3 Anaconda package appropriate for your platform.
+
+8
+00:00:59,940 --> 00:01:13,280
+Here, we will be working with the 64-bit Anaconda 4.3.0 distribution for Mac OSX with Python 3.6,
+
+9
+00:01:13,280 --> 00:01:17,839
+but other combinations should also work.
+
+10
+00:01:17,840 --> 00:01:26,980
+Second, run the installer program and follow the instructions shown on the screen.
+
+11
+00:01:26,980 --> 00:01:32,520
+The installer may ask some questions during the procedure.
+
+12
+00:01:32,520 --> 00:01:41,420
+If you are not sure how to answer, accepting the default responses should be fine.
+
+13
+00:01:41,420 --> 00:01:50,560
+You can update to the latest Anaconda version by executing the commands shown here from the command prompt,
+
+14
+00:01:50,560 --> 00:01:52,960
+but this is only optional.
+
+15
+00:01:58,940 --> 00:02:05,820
+To launch the Jupyter notebook, first, open the "Terminal" application on Mac or Linux,
+
+16
+00:02:05,820 --> 00:02:12,500
+or the "Command Prompt" on Windows to use the command line.
+
+17
+00:02:12,500 --> 00:02:22,000
+It is probably convenient if you create a new folder or directory to store the notebooks for this course.
+
+18
+00:02:22,000 --> 00:02:28,200
+Now, change into your chosen directory using the command shown here.
+
+19
+00:02:28,200 --> 00:02:37,880
+Then, you can launch the Jupiter notebook by typing "jupyter notebook" in the command line.
+
+20
+00:02:37,880 --> 00:02:43,100
+Some information will be displayed on your screen, which you can ignore;
+
+21
+00:02:43,100 --> 00:02:50,620
+then the Jupyter notebook will be opened in your web-browser with a local URL.
+
+22
+00:02:50,620 --> 00:02:55,360
+Here we use the Safari web-browser on Mac,
+
+23
+00:02:55,360 --> 00:03:04,120
+but you should observe the same results under other operating systems or browsers.
+
+24
+00:03:07,120 --> 00:03:12,920
+Next, we will start a new Python kernel.
+
+25
+00:03:12,920 --> 00:03:22,120
+Click on the "New" icon, and select "Python 3" which is circled in red in the figure.
+
+26
+00:03:22,120 --> 00:03:27,120
+The Jupyter notebook works with many different programming languages,
+
+27
+00:03:27,120 --> 00:03:34,020
+not just Python, but we will not be using this capability for this course.
+
+28
+00:03:34,020 --> 00:03:43,840
+If you can see more than two "Python" options in the "New" menu, please be sure to choose Python-version-3.
+
+29
+00:03:43,840 --> 00:03:48,180
+Here we just choose "Python 3."
+
+30
+00:03:51,020 --> 00:03:55,340
+Then a new notebook will open,
+
+31
+00:03:55,340 --> 00:04:03,840
+with an empty box called "Cell," in which you can type and run python commands interactively.
+
+32
+00:04:09,540 --> 00:04:16,480
+To be sure that you are running a proper Python3 version, type the following commands in the cell,
+
+33
+00:04:16,480 --> 00:04:22,300
+and run it by performing one of the following operations.
+
+34
+00:04:23,880 --> 00:04:30,740
+The system will print the version number of the Python interpreter you are currently using.
+
+35
+00:04:30,740 --> 00:04:33,420
+If it is found to be version 2,
+
+36
+00:04:33,420 --> 00:04:43,500
+please uninstall the present Anaconda and re-install another Anaconda with a proper python version 3.
+
+37
+00:04:47,380 --> 00:04:54,200
+Here, let us use cells in code mode to run Python in interactive mode.
+
+38
+00:04:54,200 --> 00:04:59,960
+First, perform one of the following operations to create a new cell.
+
+39
+00:05:04,260 --> 00:05:11,720
+Next, type "1+1" in the new cell and run it.
+
+40
+00:05:11,720 --> 00:05:18,540
+Then you will find the answer "2" as an output.
+
+41
+00:05:18,540 --> 00:05:23,120
+The cell is editable by clicking on it.
+
+42
+00:05:27,460 --> 00:05:34,960
+Now, type the following code-example in a new cell and run it.
+
+43
+00:05:36,600 --> 00:05:44,360
+The 1st line is to import the "numpy" library with a shorter name "np."
+
+44
+00:05:44,360 --> 00:05:53,880
+This library is necessary to use mathematical functions such as "sin" and "cos" in the notebook.
+
+45
+00:05:53,880 --> 00:05:59,800
+Then you will find the values in the output cell.
+
+46
+00:05:59,800 --> 00:06:06,060
+More detailed information is available at the "numpy" website.
+
+47
+00:06:08,720 --> 00:06:14,900
+You can also use Jupyter notebooks to write documents in Markdown mode.
+
+48
+00:06:14,900 --> 00:06:17,300
+To write a formatted text,
+
+49
+00:06:17,300 --> 00:06:25,520
+select the cell and change cell type to Markdown mode by one of the following operations.
+
+50
+00:06:29,660 --> 00:06:35,900
+Then type the following code-example in the selected cell and run it.
+
+51
+00:06:38,340 --> 00:06:41,190
+This is the output.
+
+52
+00:06:41,620 --> 00:06:46,840
+Detailed information on markdown is available at various websites,
+
+53
+00:06:46,840 --> 00:06:53,260
+for example, at the website called "Mastering Markdown."
+
+54
+00:06:56,940 --> 00:07:02,520
+You can write equations using LaTeX commands in Markdown mode.
+
+55
+00:07:02,520 --> 00:07:09,180
+Type the following code-example in the selected cell in Markdown mode and run it.
+
+56
+00:07:10,700 --> 00:07:13,490
+The results are shown here.
+
+57
+00:07:16,020 --> 00:07:24,880
+Detailed information on LaTeX is also available online, for example at "The LaTeX project" website.
+
+58
+00:07:27,640 --> 00:07:36,040
+Notebooks are periodically saved, but you can force save your changes by selecting "Save and Checkpoint"
+
+59
+00:07:36,040 --> 00:07:44,940
+from the "File" menu or clicking on the "save" icon circled in green in the figure.
+
+60
+00:07:44,940 --> 00:07:51,040
+You can also change the file name using the instructions below.
+
+61
+00:07:55,160 --> 00:08:02,300
+To terminate the Jupyter notebook, make the command line window active, and press "Control-C"
+
+62
+00:08:02,300 --> 00:08:09,320
+until the command prompt is recovered, or select "File" menu -> "Close and Halt."
+
+63
+00:08:09,320 --> 00:08:14,040
+You can also terminate the web-browser if necessary.
+
+64
+00:08:14,040 --> 00:08:23,640
+If you accidently close the web-browser, without killing the Jupiter notebook from the command line or file menu,
+
+65
+00:08:23,640 --> 00:08:30,880
+you can recover the ipython session by re-opening the local URL in your web browser.
+

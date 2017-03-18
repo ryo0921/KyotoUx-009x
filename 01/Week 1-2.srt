@@ -1,0 +1,336 @@
+1
+00:00:10,240 --> 00:00:14,400
+In this plot, I will explain how to draw a graph
+
+2
+00:00:14,400 --> 00:00:19,360
+using the Jupyter notebook with the matplotlib plotting library,
+
+3
+00:00:19,360 --> 00:00:24,000
+which is the standard 2D plotting library for Python.
+
+4
+00:00:24,000 --> 00:00:27,340
+Although we will only introduce
+
+5
+00:00:27,340 --> 00:00:30,320
+the very basic functions in this plot,
+
+6
+00:00:30,320 --> 00:00:39,060
+matplotlib can produce various kinds of publication quality figures with minimal effort.
+
+7
+00:00:39,060 --> 00:00:42,900
+If you are interested in obtaining more information,
+
+8
+00:00:42,900 --> 00:00:45,160
+you should visit their gallery page
+
+9
+00:00:45,160 --> 00:00:54,100
+to see examples of the various types of plots can be generated.
+
+10
+00:00:54,100 --> 00:00:59,520
+First, we should import the libraries needed to make the graphs.
+
+11
+00:00:59,520 --> 00:01:03,380
+For this, type the following commands
+
+12
+00:01:03,380 --> 00:01:06,000
+in a new cell and run them.
+
+13
+00:01:06,000 --> 00:01:10,800
+Note that Python will ignore anything that comes after the # symbol,
+
+14
+00:01:10,800 --> 00:01:16,000
+it is just a comment that you add to make your code more readable
+
+15
+00:01:16,000 --> 00:01:22,000
+so you do not have to type them to get the examples to work.
+
+16
+00:01:22,000 --> 00:01:25,860
+The first line is a 'magic' python command
+
+17
+00:01:25,860 --> 00:01:29,220
+that controls the environment settings.
+
+18
+00:01:29,220 --> 00:01:37,180
+Here we are instructing the system to output graphs inside the notebook itself.
+
+19
+00:01:37,180 --> 00:01:45,860
+If you do not include this command, the graphs will be plotted in separate window.
+
+20
+00:01:45,860 --> 00:01:50,820
+The second line is used to import the "numpy" library,
+
+21
+00:01:50,820 --> 00:01:55,560
+which we have already used previously.
+
+22
+00:01:55,560 --> 00:02:01,520
+The third line is to import the "pyplot" library,
+
+23
+00:02:01,520 --> 00:02:04,080
+which is a subset of "maplotlib"
+
+24
+00:02:04,080 --> 00:02:09,760
+and provides a MATLAB-like plotting framework,
+
+25
+00:02:09,760 --> 00:02:15,460
+use it with a shorter name "plt."
+
+26
+00:02:15,460 --> 00:02:21,620
+The fourth line is to use a customized style sheet called "ggplot"
+
+27
+00:02:21,640 --> 00:02:24,720
+which modifies the default plot settings
+
+28
+00:02:24,720 --> 00:02:28,260
+to produce more beautiful plots.
+
+29
+00:02:28,260 --> 00:02:32,640
+These libraries will be extensively used in this course
+
+30
+00:02:32,640 --> 00:02:39,040
+to plot all data and functions.
+
+31
+00:02:39,040 --> 00:02:41,700
+As the first example
+
+32
+00:02:41,740 --> 00:02:45,300
+let us try to draw a simple sine function.
+
+33
+00:02:45,300 --> 00:02:50,540
+Create a new cell and type the following commands, and run them.
+
+34
+00:02:50,540 --> 00:02:53,660
+You will finally obtain a graph of sin(x)
+
+35
+00:02:53,660 --> 00:02:59,400
+for x equals from -3 to +3 in a linear scale.
+
+36
+00:02:59,480 --> 00:03:05,280
+Here the description of each command is not explained in detail
+
+37
+00:03:05,280 --> 00:03:09,780
+but given as a short comment after #.
+
+38
+00:03:09,780 --> 00:03:12,220
+If you are unsure about any commands,
+
+39
+00:03:12,220 --> 00:03:16,460
+please refer to one of the many free online resources
+
+40
+00:03:16,460 --> 00:03:21,940
+such as the official matplotlib or Python websites.
+
+41
+00:03:26,120 --> 00:03:30,240
+For the second example we will draw several functions
+
+42
+00:03:30,240 --> 00:03:35,660
+which are simple powers of X in a log-log scale
+
+43
+00:03:35,660 --> 00:03:40,400
+First, define the functional form to be plotted
+
+44
+00:03:40,460 --> 00:03:44,980
+using a "def" block as shown here.
+
+45
+00:03:44,980 --> 00:03:51,540
+Create a new cell and type the following commands, and run them.
+
+46
+00:03:51,560 --> 00:03:56,700
+The "def" keyword defines a new function, called "func,"
+
+47
+00:03:56,740 --> 00:04:01,080
+which takes two parameters x and n.
+
+48
+00:04:01,080 --> 00:04:06,060
+The function will return x to the power of n.
+
+49
+00:04:09,040 --> 00:04:13,720
+Then, type the following commands in a new cell and run them
+
+50
+00:04:13,720 --> 00:04:18,740
+to draw the functions in a log-log scale.
+
+51
+00:04:18,740 --> 00:04:23,880
+The description of each command is given after #.
+
+52
+00:04:23,880 --> 00:04:28,320
+The main part is between the second and fourth lines
+
+53
+00:04:28,320 --> 00:04:37,960
+where the three power functions, x, x^2, and x^3 are plotted versus x.
+
+54
+00:04:38,380 --> 00:04:41,220
+By plotting them on a log-log scale,
+
+55
+00:04:41,220 --> 00:04:45,060
+all three functions appear as straight lines
+
+56
+00:04:45,060 --> 00:04:50,400
+with slopes of one, two and three respectively.
+
+57
+00:04:50,460 --> 00:04:55,860
+In this example, the labels and legends are also plotted together with
+
+58
+00:04:55,880 --> 00:05:01,240
+the functions on the same graph.
+
+59
+00:05:03,000 --> 00:05:08,800
+The third example is to draw a hystogram of a collection of random-data points.
+
+60
+00:05:09,200 --> 00:05:12,260
+As you can see in the following cell,
+
+61
+00:05:12,340 --> 00:05:16,760
+the third line generates a sequence of 100,000 random numbers
+
+62
+00:05:16,880 --> 00:05:19,860
+uniformly distributed between 0 and 1,
+
+63
+00:05:19,860 --> 00:05:25,140
+and then stores them in an array R.
+
+64
+00:05:25,140 --> 00:05:28,800
+The fourth line is the main part of this example,
+
+65
+00:05:28,860 --> 00:05:34,400
+where the normalized histogram of R is calculated using 100 bins
+
+66
+00:05:34,440 --> 00:05:38,600
+and plotted as a graph using a single command.
+
+67
+00:05:38,660 --> 00:05:48,180
+Like this, the "hist" function allows us to calculate the histogram of any array data very easily.
+
+68
+00:05:48,180 --> 00:05:52,940
+Finally, by plotting the histogram, we can confirm that
+
+69
+00:05:52,940 --> 00:06:02,960
+the distribution of generated random numbers is really uniformly distributed between zero and one.
+
+70
+00:06:02,960 --> 00:06:09,900
+As you have seen here, Python has very powerful and easy-to-use graphical capabilities.
+
+71
+00:06:09,920 --> 00:06:11,240
+In particular,
+
+72
+00:06:11,240 --> 00:06:19,000
+we will repeatedly use the "hist" function in this course.
+
+73
+00:06:19,000 --> 00:06:24,620
+The fourth example is to draw trajectories of random steps,
+
+74
+00:06:24,620 --> 00:06:31,000
+which describes a process called a 1-dimensional random walk.
+
+75
+00:06:31,000 --> 00:06:35,360
+A trajectory means the sequence of temporal positions,
+
+76
+00:06:35,360 --> 00:06:40,720
+usually as a function of time or number of steps.
+
+77
+00:06:40,780 --> 00:06:44,680
+In the code example shown here,
+
+78
+00:06:44,680 --> 00:06:52,560
+the sixth line generates ten trajectories of 10,000 random steps of +1 or -1,
+
+79
+00:06:52,560 --> 00:06:58,400
+and then stores them in an array named step.
+
+80
+00:06:58,400 --> 00:07:05,700
+The positions of ten independent random walkers are calculated at each step by accumulating
+
+81
+00:07:05,760 --> 00:07:08,060
+the individual values of step,
+
+82
+00:07:08,060 --> 00:07:11,700
+from zero to the number of steps.
+
+83
+00:07:11,760 --> 00:07:17,300
+Finally, by plotting the position as a function of number of steps,
+
+84
+00:07:17,300 --> 00:07:23,100
+we can visualize the trajectories of the random walkers.
+

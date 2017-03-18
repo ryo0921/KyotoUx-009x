@@ -1,0 +1,360 @@
+1
+00:00:11,140 --> 00:00:16,740
+In this plot we learn about the Euler method for numerical integration.
+
+2
+00:00:16,740 --> 00:00:23,460
+It is the most basic explicit method for numerically solving ordinary differential equations.
+
+3
+00:00:23,460 --> 00:00:28,960
+Although many other methods with higher accuracy have been proposed,
+
+4
+00:00:28,960 --> 00:00:36,840
+the simplicity of the Euler method makes it ideal when studying the subject for the first time.
+
+5
+00:00:36,840 --> 00:00:41,260
+We will use it to simulate the motions of Brownian particles
+
+6
+00:00:41,260 --> 00:00:47,020
+in the remaining part of this course.
+
+7
+00:00:47,020 --> 00:00:53,400
+Let us consider an ordinary differential equation shown here in Eq. (A1).
+
+8
+00:00:53,440 --> 00:00:59,300
+We want to know the temporal values of y for any time t,
+
+9
+00:00:59,320 --> 00:01:05,700
+under the initial condition y=y_0 at t=t_0.
+
+10
+00:01:05,720 --> 00:01:10,780
+First, let us write down the former solutions of
+
+11
+00:01:10,780 --> 00:01:18,500
+the differential equation by integrating Eq. (A1) in time, from t_0 to t.
+
+12
+00:01:18,500 --> 00:01:25,560
+Eq. (A2) gives the exact value of y at any given time t,
+
+13
+00:01:25,560 --> 00:01:32,260
+starting from the initial condition of y_0 at t=0.
+
+14
+00:01:32,260 --> 00:01:41,820
+However, an analytical evaluation of the time integrals is only possible for very limited cases.
+
+15
+00:01:41,880 --> 00:01:48,320
+In most situations, we must solve these differential equations numerically.
+
+16
+00:01:48,320 --> 00:01:57,440
+The Euler method is the simplest method for performing this numerical integration.
+
+17
+00:01:57,460 --> 00:02:01,860
+To solve differential equation numerically using computers,
+
+18
+00:02:01,860 --> 00:02:06,200
+we must first discretize the time axis.
+
+19
+00:02:06,200 --> 00:02:13,400
+We divide the total time span, from t_0 to t into N equally spaced segments,
+
+20
+00:02:13,400 --> 00:02:17,920
+each describing a short time increment Delta t.
+
+21
+00:02:17,920 --> 00:02:24,280
+And define the following discrete valuables.
+
+22
+00:02:25,840 --> 00:02:32,660
+Now, consider how to perform the integration over a small time increment Delta t,
+
+23
+00:02:32,660 --> 00:02:36,900
+from t_i to t_i+1.
+
+24
+00:02:36,900 --> 00:02:39,440
+Using the Taylor expansion,
+
+25
+00:02:39,440 --> 00:02:43,600
+we expand the integrand around t_i,
+
+26
+00:02:43,600 --> 00:02:51,300
+in increasing powers of τ, where τ = t' - t_i.
+
+27
+00:02:51,300 --> 00:03:02,900
+For simplicity, we only explicitly write the zero-th order term, f_i.
+
+28
+00:03:02,900 --> 00:03:07,760
+The integrals can be performed analytically with each term
+
+29
+00:03:07,760 --> 00:03:18,200
+one order in Delta t higher than the previous one.
+
+30
+00:03:18,260 --> 00:03:24,440
+In the limit when the time increment Delta t goes to 0,
+
+31
+00:03:24,440 --> 00:03:35,600
+we can neglect all terms in Eq. (A7) of second order or higher.
+
+32
+00:03:35,660 --> 00:03:44,140
+This first order approximation is known as the Euler method, shown here as Eq. (A8).
+
+33
+00:03:44,140 --> 00:03:48,680
+By repeatedly applying Eq.(A8) N times
+
+34
+00:03:48,680 --> 00:03:57,200
+we can obtain an approximation of y at a given time t = N Delta t.
+
+35
+00:03:57,260 --> 00:04:04,640
+This process is schematically shown in Eq. (A9).
+
+36
+00:04:04,660 --> 00:04:10,440
+This is a typical example of how a computer simulation proceeds.
+
+37
+00:04:10,440 --> 00:04:13,740
+The Euler method is a first-order method,
+
+38
+00:04:13,740 --> 00:04:20,360
+which means that the local error is proportional to the square of Delta t,
+
+39
+00:04:20,360 --> 00:04:26,260
+and the global error is proportional to Delta t.
+
+40
+00:04:26,260 --> 00:04:29,960
+Although simple not very accurate itself,
+
+41
+00:04:29,960 --> 00:04:37,260
+the Euler method serves as the basis to construct more accurate methods.
+
+42
+00:04:37,260 --> 00:04:42,800
+From Eqs. (A1) and (A8),
+
+43
+00:04:42,800 --> 00:04:47,720
+it is straightforward to solve for f, and to recognize that
+
+44
+00:04:47,720 --> 00:04:53,740
+the Euler method is a forward difference approximation to the derivative of y,
+
+45
+00:04:53,740 --> 00:04:59,180
+as defined in Eq. (A10).
+
+46
+00:05:01,900 --> 00:05:06,320
+Instead of using the forward difference approximation of the Euler method,
+
+47
+00:05:06,320 --> 00:05:13,360
+we can use a centered difference to design a higher-order integration method.
+
+48
+00:05:13,360 --> 00:05:20,380
+The central difference approximation given by Eq. (A11) estimates
+
+49
+00:05:20,380 --> 00:05:31,360
+the derivative of y at step i, in terms of the y values at steps i-1 and i+1.
+
+50
+00:05:31,360 --> 00:05:36,040
+Substituting Eq. (A11) into Eq. (A1),
+
+51
+00:05:36,040 --> 00:05:46,740
+we obtain the difference equation referred to as the Leapfrog method, shown in Eq. (A12).
+
+52
+00:05:46,740 --> 00:05:55,500
+This integration scheme gives a method that is accurate to second order in Delta t.
+
+53
+00:05:55,500 --> 00:05:59,940
+The simulation procedure corresponding to the Leapfrog method
+
+54
+00:05:59,940 --> 00:06:08,520
+is schematically represented in Eqs. (A13) and (A14).
+
+55
+00:06:08,520 --> 00:06:11,340
+In contrast to the Euler method,
+
+56
+00:06:11,340 --> 00:06:21,380
+the difference equation for the Leapfrog method involves values of y and f at distinct times,
+
+57
+00:06:21,380 --> 00:06:30,560
+in this case i and i-1 respectively.
+
+58
+00:06:30,560 --> 00:06:37,560
+Here we have written down the difference equations for a second order Runge-Kutta method.
+
+59
+00:06:37,560 --> 00:06:42,840
+The first Eq. (A15) represents an intermediate operation
+
+60
+00:06:42,840 --> 00:06:57,680
+to estimate y of i+1/2 and f of i+1/2 at the midpoint using the Euler method.
+
+61
+00:06:57,680 --> 00:07:02,760
+The second Eq. (A16) represents the main operation,
+
+62
+00:07:02,760 --> 00:07:09,000
+where y_i+1 is calculated using a Leapfrog like method
+
+63
+00:07:09,040 --> 00:07:14,760
+with f evaluated at the midpoint.
+
+64
+00:07:14,760 --> 00:07:21,800
+This particular method is second order in Delta t, like the Leapfrog method,
+
+65
+00:07:21,820 --> 00:07:29,560
+but higher order Runge-Kutte methods can be easily derived.
+
+66
+00:07:29,560 --> 00:07:38,640
+In fact, the most popular Runge-Kutta method is the 4th order method we present now.
+
+67
+00:07:38,640 --> 00:07:51,160
+The appropriate difference equations for this scheme are given in Eqs. from (A18) to (A21).
+
+68
+00:07:51,160 --> 00:07:59,420
+The first three equations from (A18) to (A20) represent intermediate operations to estimate
+
+69
+00:07:59,420 --> 00:08:07,000
+tentative values for y and f using the Euler method.
+
+70
+00:08:07,000 --> 00:08:12,160
+The fourth equation is the main operation,
+
+71
+00:08:12,160 --> 00:08:21,440
+where y_i+1 is calculated using the intermediate values of f obtained previously.
+
+72
+00:08:21,440 --> 00:08:28,420
+This method is fourth order in Delta t.
+
+73
+00:08:28,440 --> 00:08:31,900
+Let us consider a very simple problem here,
+
+74
+00:08:31,900 --> 00:08:37,060
+and try to apply the Euler method to numerically solve it.
+
+75
+00:08:37,060 --> 00:08:43,260
+We want to numerically solve the following differential equation
+
+76
+00:08:43,260 --> 00:08:55,400
+and determine y for t from 0 to 10, with initial condition y=1 at t=0.
+
+77
+00:08:55,460 --> 00:09:03,640
+Then, we compare it with the analytical solution y = exponential -t.
+
+78
+00:09:03,640 --> 00:09:07,780
+As we already learned in the previous lesson,
+
+79
+00:09:07,780 --> 00:09:15,020
+we should first import the libraries needed to draw the plots.
+
+80
+00:09:22,960 --> 00:09:25,980
+In the code example shown here,
+
+81
+00:09:25,980 --> 00:09:30,280
+first, we define the time increment and the time range
+
+82
+00:09:30,280 --> 00:09:34,860
+as well as the number of integration steps to take.
+
+83
+00:09:34,860 --> 00:09:39,180
+Next, we create an array for the time values
+
+84
+00:09:39,180 --> 00:09:47,940
+and the y values for the analytical and numerical solutions.
+
+85
+00:09:47,940 --> 00:09:57,580
+The numerical solution to y is found by repeated application of Eq. (A8).
+
+86
+00:09:57,580 --> 00:10:01,540
+Finally, to visualize the error of our method
+
+87
+00:10:01,540 --> 00:10:05,940
+we plot the ratio of the two solutions.
+
+88
+00:10:12,180 --> 00:10:17,440
+Although both curves seem identical,
+
+89
+00:10:17,440 --> 00:10:26,180
+it is clear that for large times, the error increases.
+
+90
+00:10:26,200 --> 00:10:30,860
+This error can be reduced by decreasing Delta t.
+

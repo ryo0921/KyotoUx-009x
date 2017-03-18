@@ -1,0 +1,224 @@
+1
+00:00:09,980 --> 00:00:20,260
+In this plot we try to simulate the dynamics of a simple mechanical system using the Euler method.
+
+2
+00:00:20,260 --> 00:00:26,240
+Consider a spring of constant k, with one end attached to the origin,
+
+3
+00:00:26,240 --> 00:00:32,880
+and the other end to a particle of mass m immersed in a fluid.
+
+4
+00:00:32,880 --> 00:00:39,320
+Here the friction constant between the particle and the fluid is zeta,
+
+5
+00:00:39,320 --> 00:00:45,720
+but we assume that the spring is friction free.
+
+6
+00:00:45,740 --> 00:00:56,420
+Let R(t) be the temporal position of the particle at time t, and V(t) its velocity.
+
+7
+00:00:56,480 --> 00:01:00,120
+There are two forces acting on the particle;
+
+8
+00:01:00,120 --> 00:01:08,180
+the friction force exerted by the fluid and the restoring force of the spring.
+
+9
+00:01:08,180 --> 00:01:11,780
+The friction force is assumed to be proportional to
+
+10
+00:01:11,780 --> 00:01:19,680
+the velocity of the particle and points in the opposite direction.
+
+11
+00:01:19,680 --> 00:01:35,020
+The spring force is assumed to be proportional to the distance from the origin and points towards the origin.
+
+12
+00:01:35,020 --> 00:01:39,440
+Then, the following two differential equations
+
+13
+00:01:39,440 --> 00:01:47,820
+for the time evolution of the position and the velocity of the particle, must be simultaneously solved.
+
+14
+00:01:47,860 --> 00:01:53,260
+Eq. (B1) is simply the definition of the velocity,
+
+15
+00:01:53,260 --> 00:02:04,620
+and Eq. (B2) represents the force balance, which is known as Newton's 2nd law of motion.
+
+16
+00:02:04,620 --> 00:02:14,420
+We here use the Euler method to numerically solve the ordinary differential Eqs. (B1) and (B2).
+
+17
+00:02:14,420 --> 00:02:18,580
+For a small time increment Delta t,
+
+18
+00:02:18,580 --> 00:02:26,300
+the time integrals from t_i to t_i+Delta t can be approximated to first order
+
+19
+00:02:26,300 --> 00:02:34,060
+as shown in Eqs. (B3) and (B4).
+
+20
+00:02:34,060 --> 00:02:45,360
+Before running a simulation, let us import the necessary libraries.
+
+21
+00:02:45,360 --> 00:02:48,400
+In the code examples shown here,
+
+22
+00:02:48,400 --> 00:02:57,800
+first, we define the dimensionality of our system, and the number of steps we want to take.
+
+23
+00:02:57,900 --> 00:03:03,220
+Then, define R and V as two-dimensional vectors,
+
+24
+00:03:03,220 --> 00:03:10,100
+which will contain the instantaneous position and velocity of our particle.
+
+25
+00:03:10,100 --> 00:03:15,800
+To visualize the trajectory, we also create arrays Rs and Vs,
+
+26
+00:03:15,800 --> 00:03:21,100
+which will contain the positions and velocities at all times.
+
+27
+00:03:21,100 --> 00:03:35,560
+Finally, we also define arrays to store the energy and the time values for the whole trajectory.
+
+28
+00:03:35,560 --> 00:03:45,380
+To create animations using "matplotlib," we will use the "FuncAnimation" procedure of the animation module.
+
+29
+00:03:45,380 --> 00:03:51,800
+This module requires that we define two additional procedures, "init" and "animate."
+
+30
+00:03:51,860 --> 00:04:01,820
+"init" is just an initialization procedure that defines all the graphical elements that will later be used.
+
+31
+00:04:01,820 --> 00:04:09,240
+"animate" is the main procedure. It will be called every time we want to update the graph,
+
+32
+00:04:09,240 --> 00:04:19,000
+thus, it will be responsible for updating our solution by performing the time integration.
+
+33
+00:04:27,840 --> 00:04:31,840
+We perform a simulation in the code example shown here.
+
+34
+00:04:31,860 --> 00:04:38,980
+The System parameters and the initial conditions are defined at the beginning.
+
+35
+00:04:38,980 --> 00:04:44,020
+Then, necessary procedures for drawing animation are performed.
+
+36
+00:04:44,080 --> 00:04:56,680
+Finally the "Func.animation" procedure is called at the bottom.
+
+37
+00:04:56,680 --> 00:05:01,360
+Here, we visualize the time evolution of the particle trajectory.
+
+38
+00:05:01,360 --> 00:05:07,760
+The black point represents the position of the particle at the given time.
+
+39
+00:05:07,760 --> 00:05:17,740
+In addition, the entire trajectory of the particle is given by updating the red line at each step.
+
+40
+00:05:17,760 --> 00:05:29,060
+Notice that the particle traces what appears to be a closed orbit.
+
+41
+00:05:29,100 --> 00:05:41,200
+Let us look in more detail at what is happening to the particle.
+
+42
+00:05:41,200 --> 00:05:50,400
+For this, we have plotted the x and y positions as well as the total energy, as a function of time.
+
+43
+00:05:50,400 --> 00:05:57,740
+As expected, the x and y coordinates show oscillatory motion.
+
+44
+00:05:57,740 --> 00:06:05,700
+What is probably more surprising are the oscillations in the total energy.
+
+45
+00:06:05,740 --> 00:06:15,220
+In this case, we have turned off friction, so ideally the energy of our system should be conserved.
+
+46
+00:06:15,220 --> 00:06:24,440
+The oscillations in the energy are an artifact of the approximate solution scheme we have used.
+
+47
+00:06:24,460 --> 00:06:30,120
+To reduce these fluctuations, we can use a smaller Delta t,
+
+48
+00:06:30,160 --> 00:06:39,800
+or even adopt a higher order integrator, for example the Runge-Kutta 4th order method.
+
+49
+00:06:39,900 --> 00:06:45,020
+However, even though the energy is not strictly conserved,
+
+50
+00:06:45,080 --> 00:06:52,340
+notice that there is no notable systematic drift.
+
+51
+00:06:52,340 --> 00:06:56,700
+The energy oscillates around a fixed value.
+
+52
+00:06:56,700 --> 00:07:04,820
+For physical simulations, this is a crucial aspect of a good integrator.
+
+53
+00:07:04,840 --> 00:07:17,360
+Ideally, the solutions to this harmonic problem in the absence of friction are closed orbits.
+
+54
+00:07:22,640 --> 00:07:32,420
+To check if this is the case, we make a parametric plot of the x, y positions of the particle.
+
+55
+00:07:32,420 --> 00:07:37,060
+Indeed, our orbit appears to be a closed one
+
+56
+00:07:37,060 --> 00:07:44,820
+even though a more careful examination will show a slightly spiraling trajectory.
+
