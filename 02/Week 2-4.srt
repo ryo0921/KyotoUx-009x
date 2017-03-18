@@ -1,0 +1,432 @@
+1
+00:00:10,800 --> 00:00:14,560
+In this plot, you will learn about the random walk,
+
+2
+00:00:14,560 --> 00:00:21,440
+and see how it is a very basic but illuminating example of a stochastic process.
+
+3
+00:00:21,440 --> 00:00:24,840
+After summarizing the necessary theoretical knowledge
+
+4
+00:00:24,840 --> 00:00:28,620
+that we have already learned in the course,
+
+5
+00:00:28,620 --> 00:00:32,500
+we will conduct computer simulations of a random walk
+
+6
+00:00:32,500 --> 00:00:38,060
+and perform a stochastic analysis of the results.
+
+7
+00:00:38,100 --> 00:00:40,320
+At the end of this plot,
+
+8
+00:00:40,320 --> 00:00:50,420
+we will understand the close relationship between a random walk and the diffusion process.
+
+9
+00:00:50,420 --> 00:00:55,420
+Because a "random walk" is translated in Japanese as "drunken steps,"
+
+10
+00:00:55,420 --> 00:01:00,860
+I will use this analogy to explain the random walk process.
+
+11
+00:01:00,860 --> 00:01:01,880
+Imagine that
+
+12
+00:01:01,880 --> 00:01:07,200
+a drunken man is wandering around town after a heavy night of drinking.
+
+13
+00:01:07,200 --> 00:01:09,900
+He is completely disoriented
+
+14
+00:01:09,900 --> 00:01:13,260
+with no clue as to how to get home.
+
+15
+00:01:13,260 --> 00:01:19,260
+At each step, he loses memory of which direction he was going,
+
+16
+00:01:19,260 --> 00:01:25,260
+and chooses a new random direction in which to move.
+
+17
+00:01:25,260 --> 00:01:32,640
+For simplicity, we will consider the 1−D version of this random walk.
+
+18
+00:01:32,640 --> 00:01:37,840
+Thus, at each step, the drunken man has two options.
+
+19
+00:01:37,840 --> 00:01:43,600
+He can either take a step to the left or to the right.
+
+20
+00:01:43,600 --> 00:01:48,160
+At each step he is basically flipping a coin
+
+21
+00:01:48,160 --> 00:01:52,300
+to determine in which direction to move.
+
+22
+00:01:52,300 --> 00:01:58,140
+Thus, we set s_i = −1 or 1,
+
+23
+00:01:58,140 --> 00:02:04,380
+to be the stochastic variable that determines the i-th step,
+
+24
+00:02:04,380 --> 00:02:16,740
+where s_i=−1 means a step to the left and +1 to the right.
+
+25
+00:02:16,740 --> 00:02:23,600
+After "m" such steps, the location of the man is given by "l,"
+
+26
+00:02:23,600 --> 00:02:33,320
+and is equal to the sum of all s_i from i = 0 to m.
+
+27
+00:02:33,320 --> 00:02:39,760
+Assuming he was initially at the origin,
+
+28
+00:02:39,760 --> 00:02:44,040
+l = 0 at m = 0,
+
+29
+00:02:44,040 --> 00:02:50,900
+our aim is to calculate the probability distribution function P(l,m)
+
+30
+00:02:50,900 --> 00:03:04,240
+of finding the drunken man at a location l after m steps.
+
+31
+00:03:04,240 --> 00:03:06,960
+As you probably realized,
+
+32
+00:03:06,960 --> 00:03:13,960
+we can evaluate P(l,m) in terms of the binomial distribution function.
+
+33
+00:03:13,960 --> 00:03:18,100
+To this end, we introduce two new variables,
+
+34
+00:03:18,100 --> 00:03:25,120
+namely n+, the total number of steps to the right,
+
+35
+00:03:25,120 --> 00:03:30,380
+and n−, the total number of steps to the left.
+
+36
+00:03:30,380 --> 00:03:39,240
+Then, the total number of steps m is represented as "n+" + "n−,"
+
+37
+00:03:39,240 --> 00:03:47,800
+and the current location l is represented as n+" – "n−."
+
+38
+00:03:47,820 --> 00:03:58,920
+Solving for n+ and n− in terms of m and l, we obtain Eq. (E1).
+
+39
+00:03:58,920 --> 00:04:01,980
+Using n+ or n−,
+
+40
+00:04:01,980 --> 00:04:07,440
+the probability distribution function P(l,m) can be estimated using
+
+41
+00:04:07,440 --> 00:04:11,280
+the binomial distribution function P_Binomial
+
+42
+00:04:11,280 --> 00:04:18,480
+of obtaining n+ right steps in m total steps,
+
+43
+00:04:18,480 --> 00:04:26,860
+or equivalently, obtaining n− left steps in m steps.
+
+44
+00:04:26,860 --> 00:04:29,040
+We already know that
+
+45
+00:04:29,040 --> 00:04:38,100
+such probabilities are given explicitly by the form of Eq. (E3).
+
+46
+00:04:38,100 --> 00:04:45,120
+When n+ and m are much larger than 1,
+
+47
+00:04:45,120 --> 00:04:55,140
+we know that the binomial distribution function converges to the normal distribution given in Eq. (E4)
+
+48
+00:04:55,140 --> 00:05:07,280
+with the average and variance of n+ given in Eqs. (E5) and (E6).
+
+49
+00:05:07,280 --> 00:05:15,060
+Recall that n+ is equal to (m+l)/2.
+
+50
+00:05:15,060 --> 00:05:28,020
+Thus, the binomial distribution function appearing in Eq. (E4) can be rewritten as Eq. (E7),
+
+51
+00:05:28,020 --> 00:05:33,040
+this time as a function of l.
+
+52
+00:05:33,040 --> 00:05:43,660
+Therefore, the desired probability distribution function P(l,m) is obtained as Eq. (E9)
+
+53
+00:05:43,660 --> 00:05:52,700
+with the average and variance for l given by Eqs. (E10) and (E11).
+
+54
+00:05:52,700 --> 00:05:57,760
+Now let us perform computer simulations
+
+55
+00:05:57,760 --> 00:06:04,800
+for a random walk using a random number generator to generate the steps of the walk.
+
+56
+00:06:04,820 --> 00:06:16,680
+First, import the numerical and graphical libraries as usual.
+
+57
+00:06:16,680 --> 00:06:20,440
+The main part of the simulation code is shown here.
+
+58
+00:06:20,440 --> 00:06:25,260
+In the beginning, we set p = 0.5,
+
+59
+00:06:25,260 --> 00:06:33,700
+which represents a drunken man with equal probability for moving right or left.
+
+60
+00:06:33,700 --> 00:06:40,540
+Then, set the number of total steps M=1,000
+
+61
+00:06:40,540 --> 00:06:49,100
+and the number of independent random walkers N=100,000.
+
+62
+00:06:49,140 --> 00:06:57,060
+The average and the standard deviation for the final location "l" after "M" steps are
+
+63
+00:06:57,080 --> 00:07:04,280
+calculated using Eqs. (E10) and (E11).
+
+64
+00:07:04,280 --> 00:07:09,000
+We create a location array L of size N,
+
+65
+00:07:09,040 --> 00:07:18,600
+which will contain the final position for all of the N independent drunken men.
+
+66
+00:07:18,600 --> 00:07:24,320
+After initializing the location array L to zero,
+
+67
+00:07:24,320 --> 00:07:30,260
+assuming the initial position is the same for all of them,
+
+68
+00:07:30,260 --> 00:07:37,320
+we generate a random sampling of steps for each of the men.
+
+69
+00:07:37,320 --> 00:07:43,720
+The M steps for each walk are randomly chosen from -1 or +1,
+
+70
+00:07:43,720 --> 00:07:54,340
+and stored as a variable "step" in the 10th line.
+
+71
+00:07:54,340 --> 00:08:02,560
+Then, we calculate the final location l by accumulating all of the steps,
+
+72
+00:08:02,560 --> 00:08:13,080
+and storing the result in the L array at line 11 of the code.
+
+73
+00:08:13,080 --> 00:08:21,640
+This procedure of generating the M steps and then adding them to obtain the final location
+
+74
+00:08:21,640 --> 00:08:29,100
+is repeated N times, once for each drunken man.
+
+75
+00:08:29,100 --> 00:08:37,680
+This is achieved by the for loop which starts at line 9.
+
+76
+00:08:37,680 --> 00:08:46,400
+Notice the indentation of the code for lines 10 and 11
+
+77
+00:08:46,400 --> 00:08:52,660
+to indicate that they are performed inside the for loop.
+
+78
+00:08:52,660 --> 00:09:00,740
+The remaining part of the code is just used to draw the plots of the histogram for "l,"
+
+79
+00:09:00,780 --> 00:09:06,500
+as well as the expected Gaussian distribution.
+
+80
+00:09:15,860 --> 00:09:19,020
+By running this code example,
+
+81
+00:09:19,020 --> 00:09:31,720
+you see that the probability distribution function P(l,m) is perfectly represented by Eqs. (E9) to (E11).
+
+82
+00:09:31,720 --> 00:09:37,780
+You may repeat the same simulation by choosing different values of total steps,
+
+83
+00:09:37,780 --> 00:09:45,880
+for example, M=100, 1000, 10000, and 100000
+
+84
+00:09:45,880 --> 00:09:56,320
+to see how the distribution changes with the total number of steps.
+
+85
+00:09:56,320 --> 00:10:03,120
+Let us next discuss how the random walk can be connected to the diffusion constant D.
+
+86
+00:10:03,120 --> 00:10:06,860
+To this end, we define two constants, namely
+
+87
+00:10:06,860 --> 00:10:14,740
+the length of a single step "a" and the time between subsequent steps t_s.
+
+88
+00:10:14,740 --> 00:10:26,200
+Here we consider a drift free case where p=0.5 and thus the average of "l" is 0.
+
+89
+00:10:26,200 --> 00:10:37,100
+Using "a" and t_s, we define the position of the random walker as x,
+
+90
+00:10:37,100 --> 00:10:46,500
+which is equal to "a" multiplied with the current location "l,"
+
+91
+00:10:46,500 --> 00:10:52,300
+and the duration of time for making m steps as "t,"
+
+92
+00:10:52,300 --> 00:11:01,680
+which is equal to t_s multiplied with the number of total steps "m."
+
+93
+00:11:01,680 --> 00:11:08,320
+Taking care of the normalization as shown in Eq. (E12),
+
+94
+00:11:08,540 --> 00:11:23,440
+the probability distribution function P(l,m) can be converted to P(x,t) as shown in Eqs. (E13) to (E16).
+
+95
+00:11:23,440 --> 00:11:31,380
+Note that the variance of the position x is now given as a function of time t,
+
+96
+00:11:31,380 --> 00:11:39,160
+and not in terms of the number of steps m.
+
+97
+00:11:39,160 --> 00:11:51,500
+Now, let us turn our attention to the diffusion equation shown in Eq. (E17) with a diffusion constant D.
+
+98
+00:11:51,500 --> 00:11:58,940
+As initial condition we assume a delta distribution centered at the origin.
+
+99
+00:11:58,940 --> 00:12:08,480
+This means that all the walkers or diffusing particles are located at the origin.
+
+100
+00:12:08,480 --> 00:12:17,880
+If we solve this diffusion equation using the initial condition shown in Eq. (E18),
+
+101
+00:12:17,880 --> 00:12:22,780
+the solution is given by Eq. (E19),
+
+102
+00:12:22,780 --> 00:12:28,440
+which has an identical form to Eq. (E14).
+
+103
+00:12:28,440 --> 00:12:34,020
+You can convince yourselves that this is indeed a solution
+
+104
+00:12:34,020 --> 00:12:45,620
+by computing the time derivative and the second spatial derivative and verifying that Eq. (E17) is satisfied.
+
+105
+00:12:45,620 --> 00:12:51,080
+By comparing Eqs. (E14) and (E19),
+
+106
+00:12:51,080 --> 00:12:56,700
+we finally obtain the following general formula
+
+107
+00:12:56,700 --> 00:13:10,400
+which relates the diffusion constant D and the variance of the position of random walkers σ^2,
+
+108
+00:13:10,400 --> 00:13:16,280
+which is also referred to as the mean square displacement.
+

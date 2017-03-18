@@ -1,0 +1,444 @@
+1
+00:00:11,080 --> 00:00:18,080
+In the previous plot, we already see that the diffusion constant of Brownian particles is determined through
+
+2
+00:00:18,160 --> 00:00:21,420
+the long-time limit of the mean square displacements.
+
+3
+00:00:21,420 --> 00:00:25,920
+In this plot, we derive the definition of the diffusion constant
+
+4
+00:00:25,920 --> 00:00:30,860
+in an alternative way using the linear response theory.
+
+5
+00:00:30,860 --> 00:00:36,020
+The result is an example of the so-called Green-Kubo formula,
+
+6
+00:00:36,020 --> 00:00:38,920
+which can define transport coefficients
+
+7
+00:00:38,920 --> 00:00:45,660
+in terms of equilibrium correlation functions of corresponding variables.
+
+8
+00:00:45,680 --> 00:00:54,360
+Let us consider a Brownian particle under the influence of an external drift force in the x-direction.
+
+9
+00:00:54,360 --> 00:01:00,040
+The Langevin equation we introduced in the previous plot is simply modified by
+
+10
+00:01:00,040 --> 00:01:07,200
+adding the external force on the right hand side as shown in Eq. (41).
+
+11
+00:01:07,200 --> 00:01:13,540
+Understanding how a system "responds" to such an external force or perturbation provides
+
+12
+00:01:13,560 --> 00:01:19,140
+valuable information on the dynamical properties of the system.
+
+13
+00:01:19,140 --> 00:01:25,360
+This is precisely what linear response theory allows us to do.
+
+14
+00:01:25,360 --> 00:01:30,860
+It measures the response of the system to an external perturbation,
+
+15
+00:01:30,860 --> 00:01:40,240
+under the assumption that the response is linear in this perturbation.
+
+16
+00:01:40,240 --> 00:01:43,240
+The first question we want to ask is
+
+17
+00:01:43,240 --> 00:01:47,780
+how does the system reach a steady state under this external force.
+
+18
+00:01:47,780 --> 00:01:51,920
+Thus, we take the steady state average of Eq. (41),
+
+19
+00:01:51,960 --> 00:01:57,340
+in the limit where the force is held constant for infinitely long time.
+
+20
+00:01:57,380 --> 00:02:03,660
+The limit of each term in Eq. (41) is given by the following equations.
+
+21
+00:02:03,660 --> 00:02:10,300
+By definition, the change in velocity should be zero in the steady state.
+
+22
+00:02:10,300 --> 00:02:13,280
+This means that the velocity is constant
+
+23
+00:02:13,280 --> 00:02:19,100
+and it should be exactly zero along the y and z directions.
+
+24
+00:02:19,100 --> 00:02:21,960
+Thanks to the properties of the random force,
+
+25
+00:02:21,960 --> 00:02:26,220
+its average should also be zero.
+
+26
+00:02:26,220 --> 00:02:30,100
+Finally, since the external force is constant,
+
+27
+00:02:30,100 --> 00:02:38,640
+its average is simply F_0 in the x direction.
+
+28
+00:02:38,640 --> 00:02:44,640
+Thus, we see that we only need to consider the dynamics along the x direction
+
+29
+00:02:44,660 --> 00:02:49,920
+since motion along y and z will average out to zero.
+
+30
+00:02:49,920 --> 00:02:54,780
+Taking the long time average of Eq. (41) on both sides,
+
+31
+00:02:54,800 --> 00:03:00,960
+we see that the steady-state drift velocity is given by F_0
+
+32
+00:03:00,960 --> 00:03:04,900
+divided by the friction constant zeta.
+
+33
+00:03:04,900 --> 00:03:07,780
+Then, using the Einstein relation,
+
+34
+00:03:07,780 --> 00:03:13,020
+we can rewrite the steady-state velocity in terms of the diffusion coefficient
+
+35
+00:03:13,020 --> 00:03:18,460
+and the thermal energy as shown in Eq. (42).
+
+36
+00:03:18,460 --> 00:03:24,700
+Finally, solving for D we obtain Eq. (43).
+
+37
+00:03:24,700 --> 00:03:30,620
+This tells us that the diffusion constant can also be obtained from
+
+38
+00:03:30,640 --> 00:03:37,960
+the steady-state velocity of a particle driven by an external force trough a fluid.
+
+39
+00:03:37,960 --> 00:03:44,300
+In contrast, in the previous plot we derived the diffusion coefficient
+
+40
+00:03:44,320 --> 00:03:52,000
+in terms of the mean-squared displacement of a particle diffusing in a fluid.
+
+41
+00:03:52,000 --> 00:03:57,200
+Let us now introduce the basics of linear response theory.
+
+42
+00:03:57,200 --> 00:04:00,700
+Its formal derivation is not treated in this course,
+
+43
+00:04:00,740 --> 00:04:04,820
+but can be found in several text books including
+
+44
+00:04:04,820 --> 00:04:08,140
+"Basic concepts for simple and complex liquids,"
+
+45
+00:04:08,140 --> 00:04:13,600
+and "Non-equilibrium statistical mechanics."
+
+46
+00:04:13,600 --> 00:04:16,580
+In the linear response theory,
+
+47
+00:04:16,580 --> 00:04:25,040
+we assume that the system is evolving in time with an equilibrium Hamiltonian H_0.
+
+48
+00:04:25,040 --> 00:04:30,420
+Then, an external force F(t) is applied to the system,
+
+49
+00:04:30,420 --> 00:04:34,080
+which gives rise to change in the Hamiltinan,
+
+50
+00:04:34,080 --> 00:04:41,580
+from H_0 to H_0+H'(t).
+
+51
+00:04:41,580 --> 00:04:50,460
+H'(t) is the energy gain describing the coupling of the external force to the system.
+
+52
+00:04:50,480 --> 00:04:57,040
+By definition, H' is written as -A*F(t),
+
+53
+00:04:57,060 --> 00:05:04,380
+and A is said to be the conjugate variable to F.
+
+54
+00:05:04,380 --> 00:05:15,860
+Now, consider how the average of a dynamical variable B changes under the external perturbation H'.
+
+55
+00:05:15,860 --> 00:05:25,520
+Let the average of B at equilibirum, under H_0, be denoted as B_0.
+
+56
+00:05:25,540 --> 00:05:31,620
+Under the perturbed Hamiltonian, H_0 + H',
+
+57
+00:05:31,620 --> 00:05:40,760
+the average of B at time t will deviate from B_0 by an amount of Delta B.
+
+58
+00:05:40,760 --> 00:05:44,000
+Here, we stress that
+
+59
+00:05:44,020 --> 00:05:51,380
+B_0 is calculated as an average over the original Hamiltonian H_0,
+
+60
+00:05:51,380 --> 00:06:02,380
+whereas the deviation Delta B is calculated over the perturbed Hamiltonian.
+
+61
+00:06:02,380 --> 00:06:06,120
+Using linear response theory,
+
+62
+00:06:06,120 --> 00:06:15,440
+we can compute the time evolution of Delta B, provided that the external force is "small" enough.
+
+63
+00:06:15,440 --> 00:06:19,460
+Then, to the first order in the perturbation,
+
+64
+00:06:19,460 --> 00:06:25,240
+the time evolution of Delta B, under the external force F,
+
+65
+00:06:25,240 --> 00:06:32,160
+is given by a convolution of Phi_BA and F.
+
+66
+00:06:32,160 --> 00:06:37,180
+Where Phi_BA is the response function,
+
+67
+00:06:37,180 --> 00:06:46,960
+and the integral is taken from -infinity to t.
+
+68
+00:06:46,960 --> 00:06:49,640
+This result is extremely useful,
+
+69
+00:06:49,640 --> 00:06:59,160
+because Eq. (44) predicts the temporal value of B under the influence of an external force solely
+
+70
+00:06:59,160 --> 00:07:07,820
+from the equilibrium properties of the system in the absence of any external forces!
+
+71
+00:07:07,820 --> 00:07:11,700
+Notice that, as given in Eq. (45),
+
+72
+00:07:11,700 --> 00:07:19,580
+the response function is defined as the cross correlation function of A dot and B
+
+73
+00:07:19,580 --> 00:07:22,540
+under equilibrium Hamiltonian.
+
+74
+00:07:22,540 --> 00:07:31,140
+We see that linear response theory allows us to connect averages at equilibrium, under H_0,
+
+75
+00:07:31,140 --> 00:07:38,380
+with averages out of equilibrium, under H_0 + H'.
+
+76
+00:07:38,380 --> 00:07:46,460
+As an example, let us revisit the problem of calculating the self-diffusion constant of a particle,
+
+77
+00:07:46,480 --> 00:07:49,380
+now using linear response theory.
+
+78
+00:07:49,380 --> 00:07:55,100
+Assume that we have a single particle at equilibrium in a fluid.
+
+79
+00:07:55,100 --> 00:08:00,440
+At time t=0, we turn on an external potential,
+
+80
+00:08:00,460 --> 00:08:05,720
+which applies a constant external force on the particle.
+
+81
+00:08:05,720 --> 00:08:13,340
+Without loss of generality, we can set the force to act along the x-direction
+
+82
+00:08:13,340 --> 00:08:20,700
+and define the coordinates such that R = 0 at t = 0.
+
+83
+00:08:20,700 --> 00:08:28,040
+Mathematically, this force is represented as a constant amplitude F_0
+
+84
+00:08:28,040 --> 00:08:34,420
+multiplied with the Heaviside step function Theta(t)
+
+85
+00:08:34,420 --> 00:08:38,040
+which equals to 1 for t larger than 0,
+
+86
+00:08:38,040 --> 00:08:45,140
+and 0 otherwise, as illustrated in the figure.
+
+87
+00:08:45,140 --> 00:08:50,260
+The change in energy, the perturbation Hamiltonian H',
+
+88
+00:08:50,300 --> 00:08:55,920
+is given by the work done on the system by the external force.
+
+89
+00:08:55,920 --> 00:09:03,340
+By definition, this is equal to the force times the distance traveled.
+
+90
+00:09:03,340 --> 00:09:07,980
+Thus, A = R_x.
+
+91
+00:09:07,980 --> 00:09:16,520
+Since the response function depends on A-dot which is R-dot thus V,
+
+92
+00:09:16,520 --> 00:09:27,480
+lets take B equals to V to obtain the response in terms of the velocity autocorrelation function.
+
+93
+00:09:27,480 --> 00:09:34,080
+From the linear response function Eqs. (44) and (45),
+
+94
+00:09:34,080 --> 00:09:40,220
+the drift velocity under the perturbed Hamiltonian H_0+H'
+
+95
+00:09:40,260 --> 00:09:48,140
+is represented by the time integral of the velocity autocorrelation function from zero to t
+
+96
+00:09:48,140 --> 00:09:53,200
+since F=0 for t less than 0.
+
+97
+00:09:53,200 --> 00:09:58,380
+Even though we assumed a constant force along the x-direction,
+
+98
+00:09:58,380 --> 00:10:09,180
+this can be generalized to an arbitrary direction to give the general form in expression (46).
+
+99
+00:10:09,180 --> 00:10:15,720
+In the figure we have illustrated the time evolution of the drift velocity
+
+100
+00:10:15,720 --> 00:10:23,980
+after the application of external drift force at t=0.
+
+101
+00:10:23,980 --> 00:10:29,900
+Finally, from Eqs. (43) and (46),
+
+102
+00:10:29,900 --> 00:10:34,500
+the self diffusion constant of the Brownian particle is obtained by
+
+103
+00:10:34,500 --> 00:10:38,520
+taking the limit when t goes to infinity.
+
+104
+00:10:38,520 --> 00:10:45,460
+Linear response theory allows us to replace the average over the perturbed system
+
+105
+00:10:45,460 --> 00:10:50,120
+with a different average over the unperturbed system.
+
+106
+00:10:50,120 --> 00:10:56,880
+The final result is shown as Eq. (47).
+
+107
+00:10:56,880 --> 00:11:01,720
+This is an example of the so-called Green-Kubo formula,
+
+108
+00:11:01,720 --> 00:11:05,080
+which can define transport coefficients
+
+109
+00:11:05,080 --> 00:11:11,040
+in terms of equilibrium correlation functions of corresponding variables.
+
+110
+00:11:11,040 --> 00:11:15,340
+Here we have computed the Diffusion coefficient
+
+111
+00:11:15,340 --> 00:11:21,080
+in terms of the velocity auto-correlation function of an equilibrium system!
+

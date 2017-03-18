@@ -1,0 +1,80 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{a4wide}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\begin{document}
+\begin{center}
+  {\LARGE\bf Supplemental note}
+  \end{center}
+\begin{flushright}
+  {\large\bf ver. 20170209-01}\\
+ \ \\
+{\large\bf Ryoichi Yamamoto}\\
+\end{flushright}
+\section{Binomial distribution $\rightarrow$ Normal distribution}
+
+Start from Eq.(C6) shown below.
+\begin{eqnarray}
+  P(n)&=&\frac{M!}{n!(M-n)!}p^n(1-p)^{M-n}\\
+  \ln P(n)&=&\ln M! -\ln n! - \ln (M-n)!+n\ln p +(M-n)\ln(1-p)\\
+  &=&M(\ln M -1) -n(\ln n -1) - (M-n)(\ln (M-n)-1)\\& & + n\ln p +(M-n)\ln (1-p)
+\end{eqnarray}
+Here we used Stirling's approximation  valid for large $n$.
+\begin{equation}
+\ln n!\simeq n(\ln n -1)
+\end{equation}
+Take the 1st derivative of the above equation in terms of $n$.
+\begin{eqnarray}
+  \frac{d \ln P}{dn}&=&-(\ln n +1) + (\ln(M-n)+1) + \ln p -ln(1-p)\\
+  &=&-\ln n + \ln(M-n)+\ln p -\ln(1-p)\\
+  &=&\ln \left[\frac{M-n}{n} \right] - \ln \left[\frac{1-p}{p} \right] 
+\end{eqnarray}
+When $n$ and $M$ are both large, the peak in $P(n)$ and also in $\ln P(n)$ is very sharp around the mean value $n=\langle N\rangle$, and thus
+\begin{eqnarray}
+  \left.\frac{d \ln P}{dn}\right|_{n=\langle N\rangle} &=&\ln \left[\frac{M-\langle N\rangle}{\langle N\rangle} \right] - \ln \left[\frac{1-p}{p} \right] =0\\
+  \therefore \frac{M-\langle N\rangle}{\langle N\rangle} &=& \frac{1-p}{p} \\
+  \langle N\rangle&=&Mp
+\end{eqnarray}
+
+
+Consider a Taylor expansion of $\ln P(n)$ around the mean $\langle N\rangle$ by defining $n=\langle N\rangle+\delta n$.
+\begin{equation}
+  \ln P(n) = \ln (\langle N\rangle) + \left.\frac{d \ln P}{dn}\right|_{n=\langle N\rangle}\delta n
+  + \frac{1}{2}\left.\frac{d^2 \ln P}{dn^2}\right|_{n=\langle N\rangle}\delta n^2 + \cdots
+  \end{equation}
+From Eq.(7),
+\begin{eqnarray}
+  \frac{d^2 \ln P}{dn^2}&=&-\frac{1}{n}-\frac{1}{M-n}\\
+  \left.\frac{d^2 \ln P}{dn^2}\right|_{n=\langle N\rangle}&=&-\frac{1}{Mp}-\frac{1}{M-Mp}=-\frac{1}{Mp(1-p)}=-\sigma^{-2}
+\end{eqnarray}
+Terminate Eq.(12) at the 2nd order in terms of  $\delta n$, and use Eqs.(9) and (14). 
+\begin{equation}
+P(n)=const.\times\exp\left(-\frac{\delta n^2}{2\sigma^2}\right)
+\end{equation}
+Determine $const.$ so that that $\int_{-\infty}^{\infty}P(n)dn=1$, we finally obtain the following normal distribution function with $\langle N\rangle=Mp$ and $\sigma^2=Mp(1-p)$.
+\begin{equation}
+P(n)=\frac{1}{\sqrt{2\pi\sigma^2}}\exp\left(-\frac{(n-\langle N\rangle)^2}{2\sigma^2}\right)
+\end{equation}
+
+\section{Binomial distribution $\rightarrow$ Poisson distribution}
+
+We now consider the limit of $M\rightarrow\infty$ while $\langle N\rangle=Mp=a$ remains constant.
+Notice that the following approximations hold.
+\begin{eqnarray}
+%p=\frac{a}{M-1}&\simeq&\frac{a}{M}\\
+M-n&\simeq& M\\
+  \frac{M!}{(M-n)!}&=&M(M-1)\cdots(M-n+1)\simeq M^n
+\end{eqnarray}
+Again start from Eq.(C6), we can derive Poisson distribution as shown below
+with $\langle N\rangle=Mp=a$ and $\sigma^2=Mp(1-p)\simeq a$.
+\begin{eqnarray}
+  P(n)&=&\frac{M!}{n!(M-n)!}p^n(1-p)^{M-n}\\
+  &\simeq&\frac{1}{n!}M^n\left(\frac{a}{M}\right)^n\left(1-\frac{a}{M}\right)^M\\
+  &\simeq&\frac{a^n e^{-a}}{n!}
+\end{eqnarray}
+Here we used
+\begin{equation}
+\lim_{M\rightarrow \infty}\left(1-\frac{a}{M}\right)^M= e^{-a}
+\end{equation}
+\end{document}
+

@@ -1,0 +1,376 @@
+1
+00:00:11,080 --> 00:00:19,340
+Brownian motion, the motion of small particles diffusing in a fluid, is highly stochastic in nature.
+
+2
+00:00:19,340 --> 00:00:25,020
+Therefore, such motions must be modeled as stochastic processes,
+
+3
+00:00:25,020 --> 00:00:29,460
+for which exact predictions are no longer possible.
+
+4
+00:00:29,460 --> 00:00:33,440
+This means that somewhat different mathematical methods
+
+5
+00:00:33,440 --> 00:00:39,060
+are needed to characterize and analyze stochastic processes.
+
+6
+00:00:40,580 --> 00:00:44,680
+Before defining what a stochastic process is,
+
+7
+00:00:44,680 --> 00:00:51,540
+let us give a familiar example of something that is not a stochastic process.
+
+8
+00:00:51,540 --> 00:01:04,560
+Let X be given as some function of time t, such that we know the exact values of X at any given time t.
+
+9
+00:01:04,560 --> 00:01:08,460
+This is called a deterministic process.
+
+10
+00:01:09,460 --> 00:01:15,140
+Now let us consider a stochastic process Y(t).
+
+11
+00:01:15,140 --> 00:01:20,940
+Here, we can no longer specify Y as a function of time.
+
+12
+00:01:20,940 --> 00:01:25,020
+The only thing we can do is to talk about probabilities.
+
+13
+00:01:25,020 --> 00:01:30,100
+Instead of giving the value of Y at some time t,
+
+14
+00:01:30,100 --> 00:01:37,960
+we must specify the probability that the random variable has a value y at time t,
+
+15
+00:01:37,960 --> 00:01:45,700
+given that it had a value y_0 at time t_0.
+
+16
+00:01:45,700 --> 00:01:55,100
+If we were to draw several realizations of this process, we might end up with the trajectories drawn here.
+
+17
+00:01:55,100 --> 00:02:03,900
+For simplicity, we have only drawn the paths that go through y_0 at time t_0.
+
+18
+00:02:03,900 --> 00:02:07,280
+If we consider some later time t,
+
+19
+00:02:07,280 --> 00:02:17,260
+we see that Y can in principle have any value with a probability defined at the time t.
+
+20
+00:02:18,480 --> 00:02:26,720
+Finally, for the special case when the probabilities are invariant under a shift in time,
+
+21
+00:02:26,720 --> 00:02:30,640
+we say that the stochastic process is steady.
+
+22
+00:02:30,640 --> 00:02:38,860
+In such cases, only differences in time are important, not the absolute time values.
+
+23
+00:02:42,580 --> 00:02:51,480
+When studying stochastic processes, it is convenient to be able to go back and forth between real and Fourier space.
+
+24
+00:02:51,480 --> 00:02:56,720
+Consider that we have a steady stochastic process Y(t), with zero mean.
+
+25
+00:02:56,720 --> 00:03:06,880
+The Fourier transform is defined as Eq(1), and the inverse Fourier transform as Eq(2).
+
+26
+00:03:06,880 --> 00:03:21,880
+Where we have assumed that the process Y_T is defined over a time range T, from –T/2 to +T/2,
+
+27
+00:03:21,880 --> 00:03:37,260
+by multiplying the original process Y with a windowing box function such that Y_T = Y inside the range, and zero outside.
+
+28
+00:03:37,260 --> 00:03:43,160
+And later time, we will take the limit of T goes to +infty.
+
+29
+00:03:43,160 --> 00:03:50,100
+This is required in order to properly define the Fourier transform.
+
+30
+00:03:52,460 --> 00:03:58,220
+For what follows, it will be useful to define the Spectral density
+
+31
+00:03:58,220 --> 00:04:08,660
+or power spectrum of a given stochastic process Y(t) rather than directly evaluating the probability function.
+
+32
+00:04:08,660 --> 00:04:16,160
+The spectrum density is defined in terms of the Fourier transform as Eq.(4).
+
+33
+00:04:16,160 --> 00:04:29,080
+This spectral density gives us the importance of the different frequency components or Fourier modes in the process.
+
+34
+00:04:31,860 --> 00:04:37,840
+As a first example, let us consider a purely deterministic process.
+
+35
+00:04:37,840 --> 00:04:49,720
+Let the time evolution of this process be given by a simple cosine wave, of frequency \omega_1, such that in Eq.(5).
+
+36
+00:04:49,720 --> 00:04:57,960
+There is no random component here, we know the precise value of Y at any given time t.
+
+37
+00:04:57,960 --> 00:05:11,380
+When we calculate the power spectrum, we get a single delta peak, centered at \omega_1, with amplitude A^2.
+
+38
+00:05:11,380 --> 00:05:21,800
+This is not surprising, since we know that Y(t) contains only a single Fourier mode with frequency \omega_1.
+
+39
+00:05:24,220 --> 00:05:32,860
+As a second example, let us consider the case of White noise, which is purely stochastic.
+
+40
+00:05:32,860 --> 00:05:40,880
+On the left, we have a sample realization of a white noise with amplitude A.
+
+41
+00:05:40,880 --> 00:05:50,740
+From the path we can see that most values will lie within the range between –A and +A.
+
+42
+00:05:50,740 --> 00:05:55,300
+The signal looks very complicated, however,
+
+43
+00:05:55,300 --> 00:06:05,380
+a simpler representation can be obtained when you compute the power spectrum S(\omega),
+
+44
+00:06:05,380 --> 00:06:09,720
+which we have plotted on the right.
+
+45
+00:06:09,720 --> 00:06:16,080
+S(\omega) is just a constant, with amplitude A^2.
+
+46
+00:06:16,080 --> 00:06:21,740
+In other words, this process not only contains all frequencies,
+
+47
+00:06:21,740 --> 00:06:26,820
+but it contains them all in the same amount.
+
+48
+00:06:30,040 --> 00:06:32,600
+When studying stochastic process,
+
+49
+00:06:32,600 --> 00:06:39,800
+it is convenient to introduce a special class of functions called correlation functions.
+
+50
+00:06:41,880 --> 00:06:54,440
+They provide a measure of how related or correlated one or more dynamic variables are, over a separation time t.
+
+51
+00:06:54,440 --> 00:07:05,180
+For now, we only consider a single stochastic process Y(t), thus we deal with auto-correlation functions.
+
+52
+00:07:05,180 --> 00:07:14,080
+This auto-correlation function \phi(t) is defined in Eq.(9).
+
+53
+00:07:14,080 --> 00:07:19,660
+Imagine again several realizations of a stochastic process,
+
+54
+00:07:19,660 --> 00:07:26,260
+which pass through the same point at time \tau.
+
+55
+00:07:26,260 --> 00:07:31,060
+What do we know about Y at later times?
+
+56
+00:07:31,060 --> 00:07:38,700
+Assuming that the paths are continuous, we expect that for short times t,
+
+57
+00:07:38,700 --> 00:07:50,320
+Y at \tau + t will be very close to Y at ¥tau.
+
+58
+00:07:50,780 --> 00:07:57,420
+But what about for large values of t?
+
+59
+00:07:57,420 --> 00:08:04,000
+This is the information that the auto-correlation function gives us.
+
+60
+00:08:07,320 --> 00:08:13,920
+A typical example of this auto-correlation is plotted on the right.
+
+61
+00:08:13,920 --> 00:08:27,400
+At time t=0, \phi_Y(t=0) = Average(Y^2).
+
+62
+00:08:27,400 --> 00:08:33,440
+For "short" times we see a weak decay,
+
+63
+00:08:33,440 --> 00:08:37,160
+the correlation function does not change significantly,
+
+64
+00:08:37,160 --> 00:08:46,700
+but eventually, when t is large enough it finally goes to zero.
+
+65
+00:08:46,700 --> 00:08:57,300
+Thus, knowing the value of Y at some time t0 gives me some information of Y at future times.
+
+66
+00:08:57,300 --> 00:09:06,560
+But only for these "short" times, where the values are said to be correlated.
+
+67
+00:09:06,560 --> 00:09:19,280
+At larger times, my knowledge of Y at time t0 gives me no information as the auto-correlation function has decayed to zero,
+
+68
+00:09:19,280 --> 00:09:24,860
+meaning that the values are not correlated any more.
+
+69
+00:09:28,200 --> 00:09:32,580
+To get an idea of how the correlation function behaves,
+
+70
+00:09:32,580 --> 00:09:40,280
+let us consider again the case of the purely deterministic cosine wave process.
+
+71
+00:09:40,280 --> 00:09:54,140
+In this case, the auto-correlation function is a constant with the amplitude of A^2, which never decays.
+
+72
+00:09:54,140 --> 00:10:00,820
+The meaning of this is clear, if we know the value of Y at any given time,
+
+73
+00:10:00,820 --> 00:10:05,960
+we know the value of Y at all times, as expected.
+
+74
+00:10:09,460 --> 00:10:12,980
+Now let us consider a more interesting case.
+
+75
+00:10:12,980 --> 00:10:16,840
+Going back to the white noise example.
+
+76
+00:10:16,840 --> 00:10:29,520
+By definition, we know that the value of Y at any given time t, is uncorrelated with the value of Y at any other time t'.
+
+77
+00:10:29,520 --> 00:10:39,500
+In other words, knowing the value of Y at time t, does not tell me anything about future or past values of Y.
+
+78
+00:10:39,500 --> 00:10:46,080
+This is exactly what we see when we calculate the autocorrelation function,
+
+79
+00:10:46,080 --> 00:10:56,000
+which is just a delta function centered at t=zero, with amplitude of A^2.
+
+80
+00:10:57,840 --> 00:11:06,300
+Using the definition of the correlation function Eq.(9) and the inverse Fourier transform Eq.(2),
+
+81
+00:11:06,300 --> 00:11:10,000
+we can derive the following useful theorem.
+
+82
+00:11:10,000 --> 00:11:20,100
+First, we express the value of Y at time t + \tau in terms of its Fourier components.
+
+83
+00:11:20,100 --> 00:11:27,780
+Second, we rearrange the integrals over \tau and \omega,
+
+84
+00:11:27,780 --> 00:11:36,540
+and write the exponential of the sum as a product of exponentials.
+
+85
+00:11:38,660 --> 00:11:47,700
+The inner-most integral is nothing more than the conjugate of the Fourier transform of Y(t)
+
+86
+00:11:47,700 --> 00:11:55,620
+which is Y(-\omega) defined as Y*(\omega).
+
+87
+00:11:55,620 --> 00:12:11,240
+Finally, we identify the term in parenthesis as the power spectrum of Y(\omega) that is S(\omega).
+
+88
+00:12:11,250 --> 00:12:26,290
+Thus, from Eq.(14) we immediately identify S(\omega) as the Fourier transform of the correlation function \phi(t).
+
+89
+00:12:26,290 --> 00:12:33,270
+This is an example of the famous Wiener-Khintchine theorem, which states that
+
+90
+00:12:33,270 --> 00:12:40,170
+“The autocorrelation function of a stationary stochastic process
+
+91
+00:12:40,170 --> 00:12:50,630
+is related to the spectral density or power spectrum of this process through a Fourier transform.“
+
+92
+00:12:50,640 --> 00:13:01,120
+Inspection of equations (14) and (15) allows us to derive the following simple expressions for the correlation function
+
+93
+00:13:01,120 --> 00:13:15,180
+and power spectrum at zero time and frequency, represented by equations (16) and (17) respectively.
+
+94
+00:13:15,180 --> 00:13:17,980
+These are called sum rules.
+

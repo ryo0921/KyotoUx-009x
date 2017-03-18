@@ -1,0 +1,536 @@
+1
+00:00:10,060 --> 00:00:14,740
+In this plot, I will demonstrate how to generate random numbers
+
+2
+00:00:14,740 --> 00:00:20,600
+from the Gaussian, binomial, and Poisson distributions using Python.
+
+3
+00:00:20,600 --> 00:00:26,300
+Also, we will examine the distribution of the generated random numbers
+
+4
+00:00:26,300 --> 00:00:34,360
+using the "histogram" function, and compare them with the exact results.
+
+5
+00:00:34,360 --> 00:00:41,900
+This is a list of frequently used commands defined in "numpy.random" library.
+
+6
+00:00:41,900 --> 00:00:49,400
+The first command "seed" is used to initialize the seed of the random number.
+
+7
+00:00:49,440 --> 00:00:53,800
+This specifies the initial state of the generator.
+
+8
+00:00:53,800 --> 00:01:01,620
+The second command "rand" generates uniform random numbers between 0 and 1
+
+9
+00:01:01,680 --> 00:01:06,640
+in a multi-dimensional array of the specified shape.
+
+10
+00:01:06,640 --> 00:01:11,880
+The third command "randn" works like "rand"
+
+11
+00:01:11,880 --> 00:01:18,160
+but draws the random numbers from a standard normal distribution.
+
+12
+00:01:18,160 --> 00:01:24,480
+The fourth and fifth commands, "binomial" and “poisson,"
+
+13
+00:01:24,480 --> 00:01:30,620
+generate random numbers from the binomial and Poisson distributions.
+
+14
+00:01:30,620 --> 00:01:34,480
+The sixth command "choice"
+
+15
+00:01:34,480 --> 00:01:39,860
+generates random samples from the specified set.
+
+16
+00:01:39,860 --> 00:01:46,320
+We will use this function to perform a random walk simulation later.
+
+17
+00:01:46,320 --> 00:01:55,140
+Gaussian and uniform random numbers can be generated also by "normal" and "uniform" functions,
+
+18
+00:01:55,180 --> 00:02:03,760
+but we will use the "randn" and "rand" functions instead.
+
+19
+00:02:03,760 --> 00:02:10,960
+First, we import the common libraries for today's lesson.
+
+20
+00:02:16,380 --> 00:02:23,100
+"math" library contains mathematical functions defined by the C standard,
+
+21
+00:02:23,100 --> 00:02:27,920
+such as the "factorial" function.
+
+22
+00:02:27,980 --> 00:02:34,340
+Let us first generate random numbers from a Gaussian distribution.
+
+23
+00:02:34,340 --> 00:02:37,600
+In the code example shown here,
+
+24
+00:02:37,600 --> 00:02:45,660
+we set the average and the standard deviation to be 0 and 1, respectively.
+
+25
+00:02:45,680 --> 00:02:51,840
+With this choice, the distribution is called the standard normal distribution.
+
+26
+00:02:51,840 --> 00:03:01,680
+Here we generate one hundred thousand random numbers using an initial seed 0.
+
+27
+00:03:01,680 --> 00:03:06,020
+The fifth line is the main operation of this example,
+
+28
+00:03:06,020 --> 00:03:12,080
+where an array of "N" random numbers is generated from a Gaussian distribution
+
+29
+00:03:12,080 --> 00:03:15,700
+with the given average and standard deviation,
+
+30
+00:03:15,740 --> 00:03:21,160
+and stored as an array X.
+
+31
+00:03:21,160 --> 00:03:23,880
+From the 6th line to the end,
+
+32
+00:03:23,880 --> 00:03:29,880
+we have the code used to plot the random numbers.
+
+33
+00:03:29,880 --> 00:03:35,500
+If you run the code example,
+
+34
+00:03:35,500 --> 00:03:43,540
+you will see the "N" red points distributed around zero,
+
+35
+00:03:43,540 --> 00:03:50,480
+mostly between -2 and +2.
+
+36
+00:03:50,480 --> 00:03:56,580
+Next, let us examine the distribution of random numbers
+
+37
+00:03:56,580 --> 00:04:00,160
+we have just generated in the previous code example,
+
+38
+00:04:00,180 --> 00:04:07,220
+and compare it with the Gaussian distribution function shown here.
+
+39
+00:04:07,220 --> 00:04:10,380
+In this code example,
+
+40
+00:04:10,380 --> 00:04:17,100
+the first line calculates and plots the histogram of the random numbers
+
+41
+00:04:17,100 --> 00:04:23,780
+stored in X using a single "hist" command.
+
+42
+00:04:23,800 --> 00:04:30,660
+The remaining part is only to plot the Gaussian distribution function Eq.(D1)
+
+43
+00:04:30,660 --> 00:04:37,560
+and to draw the figure.
+
+44
+00:04:37,560 --> 00:04:41,760
+As you can see in the figure,
+
+45
+00:04:41,760 --> 00:04:48,680
+the agreement between the two is almost perfect.
+
+46
+00:04:48,680 --> 00:04:55,500
+Next, we calculate the auto-correlation function defined in Eq.(D2)
+
+47
+00:04:55,560 --> 00:05:00,320
+for the sequence random numbers we have generated.
+
+48
+00:05:00,320 --> 00:05:05,700
+Note that we will study the correlation function in detail next week.
+
+49
+00:05:05,700 --> 00:05:09,400
+For now, what we need to know is that
+
+50
+00:05:09,400 --> 00:05:15,880
+the correlation function gives a measure of how "related" two variables are.
+
+51
+00:05:15,880 --> 00:05:17,340
+In this case,
+
+52
+00:05:17,340 --> 00:05:22,960
+we are interested in the correlation between the random numbers.
+
+53
+00:05:22,960 --> 00:05:24,380
+In other words,
+
+54
+00:05:24,380 --> 00:05:29,960
+if I know what number just came out of the generator,
+
+55
+00:05:29,960 --> 00:05:33,580
+what can I say about the other numbers
+
+56
+00:05:33,580 --> 00:05:39,440
+that have come out already or will come from now?
+
+57
+00:05:39,440 --> 00:05:45,320
+If the correlation is zero as given in Eq.(D4),
+
+58
+00:05:45,320 --> 00:05:47,700
+knowing one random number
+
+59
+00:05:47,720 --> 00:05:55,400
+tells me absolutely nothing about the other random numbers that can come out.
+
+60
+00:05:55,400 --> 00:06:01,040
+This is expected for any good random number generators.
+
+61
+00:06:01,040 --> 00:06:05,120
+In this lesson, we will use the correlation function
+
+62
+00:06:05,120 --> 00:06:09,820
+to confirm two basic properties of a random sequence.
+
+63
+00:06:09,860 --> 00:06:14,040
+The first confirmation is on its variance,
+
+64
+00:06:14,040 --> 00:06:23,360
+which should be equal to the square of the standard deviation, as shown in Eq.(D3).
+
+65
+00:06:23,360 --> 00:06:28,600
+The second confirmation is on the independency of the random numbers,
+
+66
+00:06:28,620 --> 00:06:32,660
+as given by Eq.(D4).
+
+67
+00:06:32,660 --> 00:06:35,480
+In the code example shown here,
+
+68
+00:06:35,480 --> 00:06:42,480
+we first define the "auto_correlate" function, which calculates Eq.(D3),
+
+69
+00:06:42,480 --> 00:06:49,240
+using the "numpy" library's own "correlate" function.
+
+70
+00:06:49,240 --> 00:06:56,120
+If you run this code example,
+
+71
+00:06:56,120 --> 00:07:07,160
+you can see that the variance of the random numbers does in fact agree with the theoretical value,
+
+72
+00:07:07,160 --> 00:07:12,040
+which is equal to the square of the standard deviation.
+
+73
+00:07:12,040 --> 00:07:20,100
+Also, we see that the correlation between distinct random numbers is zero,
+
+74
+00:07:20,100 --> 00:07:23,460
+as shown in the figure.
+
+75
+00:07:23,460 --> 00:07:25,460
+This assures us that
+
+76
+00:07:25,460 --> 00:07:29,820
+the different random numbers are independent of each other.
+
+77
+00:07:29,820 --> 00:07:40,320
+Stochastic variables satisfying this property are referred to as "white noise."
+
+78
+00:07:40,320 --> 00:07:43,600
+Now, let us perform the same experiment,
+
+79
+00:07:43,620 --> 00:07:50,080
+but this time drawing the random numbers from a binomial distribution.
+
+80
+00:07:50,080 --> 00:07:51,960
+As we have seen,
+
+81
+00:07:51,960 --> 00:08:00,520
+this describes the distribution of the results for a random choice from two possible outcomes.
+
+82
+00:08:00,520 --> 00:08:05,460
+The typical example is that of a coin toss.
+
+83
+00:08:05,460 --> 00:08:07,160
+On every toss,
+
+84
+00:08:07,180 --> 00:08:10,620
+we can obtain heads with probability p,
+
+85
+00:08:10,620 --> 00:08:14,540
+and tails with probability (1-p).
+
+86
+00:08:14,540 --> 00:08:16,380
+If the coin is fair,
+
+87
+00:08:16,380 --> 00:08:24,220
+then we of course expect both p and 1-p = 0.5.
+
+88
+00:08:24,220 --> 00:08:27,840
+This is the case we will consider.
+
+89
+00:08:27,860 --> 00:08:34,820
+Here, we are interested in looking at the number of head or success results
+
+90
+00:08:34,860 --> 00:08:37,720
+after 100 coin tosses.
+
+91
+00:08:37,720 --> 00:08:40,240
+To obtain reliable statistics,
+
+92
+00:08:40,240 --> 00:08:44,880
+we perform this experiment 100,000 times,
+
+93
+00:08:44,960 --> 00:08:51,560
+and each time we count the number of times head appears.
+
+94
+00:08:51,560 --> 00:08:58,420
+The code shown here generates the results of the experiment,
+
+95
+00:08:58,420 --> 00:09:03,320
+"number of heads after 100 coin tosses,"
+
+96
+00:09:03,360 --> 00:09:11,520
+for 100,000 trials, using the single command "binomial."
+
+97
+00:09:11,580 --> 00:09:17,800
+The results are then stored in X and plotted.
+
+98
+00:09:24,340 --> 00:09:25,800
+As you can see,
+
+99
+00:09:25,800 --> 00:09:30,580
+all the results are scattered around an average of 50,
+
+100
+00:09:30,580 --> 00:09:40,620
+and are almost all contained within the range between 30 and 70.
+
+101
+00:09:40,620 --> 00:09:47,600
+We again compare the distribution with the expected theoretical result.
+
+102
+00:09:47,600 --> 00:09:52,700
+The histogram is calculated and plotted by calling “hist" command
+
+103
+00:09:52,720 --> 00:10:05,640
+and then we compare the exact distribution with the "binomial" function.
+
+104
+00:10:05,640 --> 00:10:09,900
+As you can see in the figure,
+
+105
+00:10:09,900 --> 00:10:18,900
+the agreement between the two is again good.
+
+106
+00:10:22,120 --> 00:10:27,600
+Now let us check the correlation between the random numbers.
+
+107
+00:10:27,640 --> 00:10:32,200
+We use the same auto-correlate function as before.
+
+108
+00:10:32,200 --> 00:10:35,720
+To compare with the theory,
+
+109
+00:10:35,720 --> 00:10:40,200
+we compute the exact value for i=0,
+
+110
+00:10:40,280 --> 00:10:42,660
+which is given by Eq. (D9),
+
+111
+00:10:42,660 --> 00:10:49,020
+and should be equal to the square of sigma.
+
+112
+00:10:49,020 --> 00:10:55,300
+In this case that is 25.
+
+113
+00:10:55,300 --> 00:11:07,300
+Let us run the code example shown here to calculate the correlation function.
+
+114
+00:11:07,340 --> 00:11:13,400
+For i=0, we can confirm that
+
+115
+00:11:13,400 --> 00:11:21,520
+the variance of the random numbers agrees with the expected theoretical value 25.
+
+116
+00:11:21,520 --> 00:11:26,340
+In addition, we see that
+
+117
+00:11:26,340 --> 00:11:34,120
+there is no correlation between different random numbers.
+
+118
+00:11:34,120 --> 00:11:40,000
+Finally, let us perform the experiment using the Poisson distribution.
+
+119
+00:11:40,000 --> 00:11:42,000
+As discussed before,
+
+120
+00:11:42,000 --> 00:11:46,720
+this can be used to describe the probability of n "events"
+
+121
+00:11:46,720 --> 00:11:49,680
+occurring within some time interval,
+
+122
+00:11:49,680 --> 00:11:54,160
+assuming the expected value is a.
+
+123
+00:11:54,160 --> 00:11:58,280
+The typical example would be the number of requests
+
+124
+00:11:58,280 --> 00:12:02,540
+received by a website within a one-hour time period.
+
+125
+00:12:02,540 --> 00:12:09,600
+Here, we set the expected value, or average value "a" to be 10,
+
+126
+00:12:09,660 --> 00:12:15,760
+and we generate 100,000 random numbers.
+
+127
+00:12:15,760 --> 00:12:19,960
+As before, this can all be done in a single line,
+
+128
+00:12:19,960 --> 00:12:23,320
+using the "numpy" library functions.
+
+129
+00:12:23,320 --> 00:12:32,380
+The results are stored in X and plotted.
+
+130
+00:12:32,380 --> 00:12:36,360
+As you can see,
+
+131
+00:12:36,360 --> 00:12:41,480
+all the results are scattered around an average of 10,
+
+132
+00:12:41,480 --> 00:12:48,540
+and fall within the interval between 0 and 20.
+
+133
+00:12:48,540 --> 00:13:01,080
+Again, we compare the distribution with the expected theoretical result.
+
+134
+00:13:01,080 --> 00:13:07,820
+As you can see, the agreement is excellent!
+

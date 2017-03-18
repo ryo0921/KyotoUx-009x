@@ -1,0 +1,400 @@
+1
+00:00:10,040 --> 00:00:14,600
+In this plot, we study basic theories of Brownian motion.
+
+2
+00:00:14,600 --> 00:00:19,600
+Let us start with writing down the celebrated Langevin equation
+
+3
+00:00:19,600 --> 00:00:25,760
+that describes the Brownian motion of a particle diffusing in a fluid.
+
+4
+00:00:25,760 --> 00:00:32,700
+Consider a spherical particle of radius $a$ and mass $m$ in a solvent fluid.
+
+5
+00:00:32,700 --> 00:00:38,740
+Assuming the size of the Brownian particle is much larger than the size of the fluid molecules,
+
+6
+00:00:38,740 --> 00:00:43,960
+we can treat the fluid as a continuum medium with viscosity $\eta$.
+
+7
+00:00:43,960 --> 00:00:52,340
+Let $R(t)$ be the temporal position of the particle at time $t$ and $V$ its velocity.
+
+8
+00:00:52,340 --> 00:00:57,900
+To write down Newton's equation of motion for the Brownian particle,
+
+9
+00:00:57,900 --> 00:01:06,040
+the mass times acceleration should equal the total force acting on the particle.
+
+10
+00:01:06,040 --> 00:01:17,200
+First, if a body is moving relative to a fluid, it experiences a friction force, colored in blue,
+
+11
+00:01:17,200 --> 00:01:29,160
+which will be proportional to the velocity with the constant of proportionality called the friction constant $\zeta$.
+
+12
+00:01:29,160 --> 00:01:40,260
+For a spherical particle the friction constant $\zeta$ is given by $6\pi\eta a$, known as the Stokes law.
+
+13
+00:01:40,260 --> 00:01:44,180
+And second, in addition to the friction force,
+
+14
+00:01:44,180 --> 00:01:54,560
+we know that there must be another type of force which gives rise to the irregular motion of the Brownian particle.
+
+15
+00:01:54,560 --> 00:01:59,980
+We call this the random force $F(t)$ colored in red,
+
+16
+00:01:59,980 --> 00:02:12,140
+which represents the effects of the many collisions taking place between the Brownian particle and the fluid molecules.
+
+17
+00:02:12,140 --> 00:02:23,900
+Finally, by putting all of them together, we can write down the Langevin equation shown here as Eq.(21).
+
+18
+00:02:26,800 --> 00:02:32,260
+Now, let us characterize this random force in more detail.
+
+19
+00:02:32,260 --> 00:02:35,560
+Assuming three-dimensional Cartesian coordinates,
+
+20
+00:02:35,560 --> 00:02:42,840
+the random force has three components along the x, y, and z directions.
+
+21
+00:02:42,840 --> 00:02:55,840
+Without loss of generality, we can assume that the average of the force along any direction is zero as shown in Eq.(22).
+
+22
+00:02:55,840 --> 00:03:03,120
+If this was not the case, we could always separate the non-zero part as an extra drift force
+
+23
+00:03:03,120 --> 00:03:07,740
+to be added separately in the Langevin equation.
+
+24
+00:03:07,740 --> 00:03:17,380
+We still need to specify how the forces at different times, or along different directions are correlated.
+
+25
+00:03:17,380 --> 00:03:25,240
+We note that we are interested in the dynamics of the Brownian particle at time scales
+
+26
+00:03:25,240 --> 00:03:32,100
+much larger than the time-scales of the collisions with the fluid molecules.
+
+27
+00:03:32,100 --> 00:03:42,100
+Therefore, we can assume that the successive random forces are uncorrelated on the time scale of the Brownian particle.
+
+28
+00:03:42,100 --> 00:03:55,880
+This is expressed mathematically in Eq.(23) using the auto-correlation function for the random force.
+
+29
+00:03:55,880 --> 00:04:11,800
+Here, $\delta of \alpha\beta$ is the Kroenecker's delta, it is $1$ if $\alpha = \beta$ and zero otherwise.
+
+30
+00:04:11,800 --> 00:04:27,220
+$\delta(t)$ is the Dirac delta function, it is zero everywhere except at the origin t=0, where it diverges.
+
+31
+00:04:27,220 --> 00:04:35,340
+The crucial point is that the integral of the delta function equals to one.
+
+32
+00:04:35,340 --> 00:04:45,100
+Noise which obeys equations (22) and (23) is called white noise or the Gaussian noise.
+
+33
+00:04:47,500 --> 00:04:54,380
+Now, let us calculate the power spectrum of the random force $F(t)$.
+
+34
+00:04:54,380 --> 00:05:03,380
+Using the Wiener-Kintchine theorem, we can write the power spectrum S_F (\omega)
+
+35
+00:05:03,380 --> 00:05:11,300
+in terms of the random force auto-correlation function ¥phi_F(t).
+
+36
+00:05:11,300 --> 00:05:14,960
+Using the properties of the white noise,
+
+37
+00:05:14,960 --> 00:05:25,860
+this auto-correlation Eq.(23) is proportional to a delta function, which kills the integral.
+
+38
+00:05:25,860 --> 00:05:36,420
+Thus, we arrive at the simple result that the power spectrum is a constant proportional to D tilde,
+
+39
+00:05:36,420 --> 00:05:43,020
+which determines the amplitude of the random force in Eq. (23).
+
+40
+00:05:45,820 --> 00:05:52,640
+Let us try and see what the power spectrum and correlation functions look like.
+
+41
+00:05:52,640 --> 00:06:04,420
+On the left, we plot the power spectrum of the random force, on the right the auto-correlation function.
+
+42
+00:06:06,120 --> 00:06:19,740
+S_F(\omega) is a constant, as we have just proved, and \phi(t) is proportional to a delta function.
+
+43
+00:06:20,740 --> 00:06:27,200
+Next, let us characterize the properties of the particle velocity $V$.
+
+44
+00:06:27,200 --> 00:06:32,040
+Taking the Fourier transform of the Langevin equation Eq (1),
+
+45
+00:06:32,040 --> 00:06:38,860
+we obtain a simple algebraic equation for V(\omega).
+
+46
+00:06:38,860 --> 00:06:47,620
+This can be easily solved, to give the following equation for V(\omega) as a function of F(\omega).
+
+47
+00:06:47,620 --> 00:06:53,520
+Now, we are in a position to calculate the power spectrum of the velocity.
+
+48
+00:06:53,520 --> 00:07:03,220
+By definition, S_V(\omega) is given by the square norm of the Fourier transform of the velocity.
+
+49
+00:07:03,220 --> 00:07:08,920
+Writing $V(\omega)$ in terms of $F(\omega)$, and using Eq.(24)
+
+50
+00:07:08,920 --> 00:07:16,060
+for the power spectrum of the random forces, we obtain Eq.(25).
+
+51
+00:07:17,740 --> 00:07:27,000
+We note that the form of this equation appears so often in Physics and Mathematics that it has its own name.
+
+52
+00:07:27,000 --> 00:07:30,660
+It is the Lorentzian function.
+
+53
+00:07:32,840 --> 00:07:35,900
+Once we have computed the power spectrum,
+
+54
+00:07:35,900 --> 00:07:44,320
+we can use the Wiener-Khintchine theorem to obtain the velocity auto-correlation function.
+
+55
+00:07:44,320 --> 00:07:50,160
+In the last step, we have used a well known-result,
+
+56
+00:07:50,160 --> 00:07:57,940
+that the Fourier transform of a Lorentzian is a two-sided decaying exponential.
+
+57
+00:07:57,940 --> 00:08:08,700
+This means that it is an even function of time t, and therefore depends only on the absolute value of t.
+
+58
+00:08:08,700 --> 00:08:13,440
+You can look this up in any table of integrals,
+
+59
+00:08:13,440 --> 00:08:22,060
+use a computer algebra system, or do it yourself by hand using Cauchy's integral formula.
+
+60
+00:08:24,940 --> 00:08:32,760
+Let us now visualize the previously derived results for the velocity of the Brownian particle.
+
+61
+00:08:32,760 --> 00:08:40,280
+On the left, we have the Lorentzian function describing the Power spectrum,
+
+62
+00:08:40,280 --> 00:08:52,660
+and on the right we have the two-sided decaying exponential which gives us the auto-correlation of the velocities.
+
+63
+00:08:52,660 --> 00:08:55,600
+With the results we have obtained so far,
+
+64
+00:08:55,600 --> 00:09:03,480
+we are in a position to derive a useful relation named the fluctuation-dissipation theorem.
+
+65
+00:09:03,480 --> 00:09:14,960
+Setting t=0 in Eq.(26), we obtain a simple expression for the average squared velocity:
+
+66
+00:09:14,960 --> 00:09:23,400
+it is proportional to D tilde, and inversely proportional to \zeta and m.
+
+67
+00:09:23,400 --> 00:09:30,300
+Furthermore, using the equipartition theorem of classical statistical mechanics,
+
+68
+00:09:30,300 --> 00:09:40,900
+we also know that this average should be equal to 3 times kbT divided by m,
+
+69
+00:09:40,900 --> 00:09:45,640
+where kb is the Boltzmann constant.
+
+70
+00:09:45,640 --> 00:09:52,620
+Solving for D tilde, we finally obtain the fluctuation-dissipation theorem,
+
+71
+00:09:52,620 --> 00:10:03,460
+which relates the amplitude of the fluctuating random forces with the magnitude of the dissipative friction forces.
+
+72
+00:10:05,340 --> 00:10:12,840
+Let us now turn our attention to looking at the temporal particle positions or displacements,
+
+73
+00:10:12,840 --> 00:10:16,780
+in order to characterize its diffusive motion.
+
+74
+00:10:16,780 --> 00:10:31,000
+By definition, the displacement of the particle after some time $t$ can be expressed as the time integral of the velocity V from 0 to t.
+
+75
+00:10:31,000 --> 00:10:37,380
+The mean square displacement of the particle is defined as in this equation.
+
+76
+00:10:37,380 --> 00:10:43,740
+By rewriting the displacement as a time integral of the velocity,
+
+77
+00:10:43,740 --> 00:10:51,340
+we are left with a double integral of the auto-correlation function of the velocity,
+
+78
+00:10:51,340 --> 00:11:01,800
+which has been calculated in Eq.(26), at two distinct times, t_1 and t_2.
+
+79
+00:11:03,880 --> 00:11:06,880
+The integral can be performed analytically,
+
+80
+00:11:06,880 --> 00:11:17,300
+but care must be taken to properly handle the absolute value that appears in the exponential.
+
+81
+00:11:20,100 --> 00:11:24,920
+We have drawn the integration domain on the right.
+
+82
+00:11:24,920 --> 00:11:30,640
+The blue outline gives the original integration limits for t1 and t2,
+
+83
+00:11:30,640 --> 00:11:35,660
+which is represented by a square domain of side length t.
+
+84
+00:11:35,660 --> 00:11:45,980
+Since the function we are integrating depends only on the absolute value of $t_2 – t_1$,
+
+85
+00:11:45,980 --> 00:11:51,160
+we can divide this domain into an upper triangular part,
+
+86
+00:11:51,160 --> 00:12:01,480
+the red region, where t_2 is larger than t_1, and a lower triangular part where t_1 is larger than t2.
+
+87
+00:12:01,480 --> 00:12:09,600
+Note that the value of the integral over the upper triangular domain must be equal to
+
+88
+00:12:09,600 --> 00:12:15,640
+the value of the integral over the lower domain,
+
+89
+00:12:15,640 --> 00:12:22,380
+and it should be half of the integral over the square domain.
+
+90
+00:12:22,380 --> 00:12:34,920
+Thus, we can rearrange the integration limits to go only over the red domain, where t_2 is larger than t1.
+
+91
+00:12:34,920 --> 00:12:42,740
+With this, we can get rid of the annoying absolute value from the equation,
+
+92
+00:12:42,740 --> 00:12:52,600
+and the integrals over t1 and t2 can now be separated and easily performed.
+
+93
+00:12:52,600 --> 00:13:03,040
+After doing all this, we see that the mean square displacement is increasing lineally with time t.
+
+94
+00:13:07,000 --> 00:13:13,880
+At the end of the plot, we will define the self-diffusion constant of Brownian particles,
+
+95
+00:13:13,880 --> 00:13:21,840
+as the long-time limit of the mean-square displacement divided by 6 t.
+
+96
+00:13:21,840 --> 00:13:32,780
+We then obtain that the Diffusion constant is D tilde divided by \zeta^2 as shown in Eq.(30).
+
+97
+00:13:32,780 --> 00:13:44,520
+Using the fluctuation-dissipation theorem Eq.(29), we arrive at the Einstein relation shown as Eq.(31).
+
+98
+00:13:44,520 --> 00:13:59,760
+Finally, from the Einstein relation, together with the Stokes law, we obtain the Stokes-Einstein relation shown as Eq.(32),
+
+99
+00:13:59,760 --> 00:14:07,320
+which gives a good estimate for the self diffusion constant of spherical particles of radius a,
+
+100
+00:14:07,320 --> 00:14:13,660
+diffusing in a fluid of viscosity \eta at temperature T.
+

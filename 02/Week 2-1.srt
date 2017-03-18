@@ -1,0 +1,712 @@
+1
+00:00:10,160 --> 00:00:18,100
+In the previous plot, I demonstrated how to simulate the dynamics of a model oscillator
+
+2
+00:00:18,100 --> 00:00:22,600
+by numerically integrating the ordinary differential equations
+
+3
+00:00:22,600 --> 00:00:26,080
+which govern the time evolution of the system.
+
+4
+00:00:26,080 --> 00:00:30,820
+Since the motion of such system is purely deterministic,
+
+5
+00:00:30,840 --> 00:00:36,720
+valid simulations can be performed using well established numerical integration schemes
+
+6
+00:00:36,780 --> 00:00:41,920
+such as the Euler and the Runge-Kutta methods.
+
+7
+00:00:41,920 --> 00:00:45,400
+In contrast to such deterministic processes,
+
+8
+00:00:45,400 --> 00:00:50,120
+the Brownian motion must be modeled with random forces
+
+9
+00:00:50,120 --> 00:00:54,400
+which can only be stochastically determined.
+
+10
+00:00:54,420 --> 00:01:06,560
+In this plot, we will learn basic properties of stochastic variables and their probability distribution functions.
+
+11
+00:01:06,560 --> 00:01:13,200
+We start by introducing the concept of a random or stochastic variable.
+
+12
+00:01:13,200 --> 00:01:21,700
+As its name suggests, a random variable is given by a process whose results are random.
+
+13
+00:01:21,700 --> 00:01:27,460
+We cannot, in general, predict what the measurement results will be,.
+
+14
+00:01:27,460 --> 00:01:31,320
+we can only talk in terms of probabilities.
+
+15
+00:01:31,320 --> 00:01:36,460
+Denote the stochastic variable by upper case X,
+
+16
+00:01:36,460 --> 00:01:42,540
+and a given realization or measurement as a small x.
+
+17
+00:01:42,560 --> 00:01:52,540
+Imagine that we perform a series of 1000 measurements of X, which we call x_i.
+
+18
+00:01:52,540 --> 00:02:00,940
+The figure on the left gives a sample illustration.
+
+19
+00:02:00,940 --> 00:02:07,560
+The results are "noisy," but not completely arbitrary.
+
+20
+00:02:07,580 --> 00:02:13,140
+All the x_i are centered around a fixed value
+
+21
+00:02:13,140 --> 00:02:19,380
+and most values fall within a very narrow range.
+
+22
+00:02:19,400 --> 00:02:30,040
+The proper mathematical way to define this random variable is to give its Probability distribution P(x).
+
+23
+00:02:30,120 --> 00:02:38,340
+P(x) gives the probability of observing a value around x.
+
+24
+00:02:38,340 --> 00:02:45,700
+P(x) for our example is given in the figure on the right.
+
+25
+00:02:45,700 --> 00:02:52,960
+We see that it is peaked around 10 which is the most probable value,
+
+26
+00:02:52,980 --> 00:02:58,500
+and it is only non-zero over a fixed range.
+
+27
+00:02:58,500 --> 00:03:07,300
+You see that values less than 5 or greater than 15 are very unlikely.
+
+28
+00:03:07,340 --> 00:03:14,080
+The probability distribution contains all the information needed to characterize the random variable.
+
+29
+00:03:14,080 --> 00:03:19,540
+However, P(x) can be a very complicated function of x.
+
+30
+00:03:19,540 --> 00:03:26,480
+Indeed, in some cases we cannot even know the exact form of P(x).
+
+31
+00:03:26,480 --> 00:03:35,480
+Therefore, it is useful to introduce additional quantities to describe the random process.
+
+32
+00:03:35,480 --> 00:03:39,900
+The two most important quantities that are used are
+
+33
+00:03:39,900 --> 00:03:43,640
+the average and the standard deviation.
+
+34
+00:03:43,640 --> 00:03:53,940
+The average, as its name suggests, is simply the average or mean of the random variable.
+
+35
+00:03:53,940 --> 00:04:02,120
+Note that the average value does not necessarily coincide with the most probable value.
+
+36
+00:04:02,120 --> 00:04:07,340
+The standard deviation measures the fluctuations around the mean,
+
+37
+00:04:07,340 --> 00:04:15,180
+that is, it provides a measure of how spread out the random variable is.
+
+38
+00:04:15,180 --> 00:04:22,720
+In the example figures, the black line marks the average of X,
+
+39
+00:04:22,780 --> 00:04:29,940
+while the blue lines give the standard deviation.
+
+40
+00:04:32,220 --> 00:04:38,700
+Now, we introduce the basics of probability distribution theory.
+
+41
+00:04:38,700 --> 00:04:45,000
+Let X be a real and continuous stochastic variable.
+
+42
+00:04:45,000 --> 00:04:56,720
+First, the probability distribution P(x) is greater than or equal to zero.
+
+43
+00:04:56,720 --> 00:05:00,980
+Second, it is normalized to one.
+
+44
+00:05:00,980 --> 00:05:06,720
+That is, the sum of all probabilities is equal to one.
+
+45
+00:05:06,720 --> 00:05:19,760
+Third, the m-th moment, denoted mu_m, is defined as the average of x^m.
+
+46
+00:05:19,760 --> 00:05:31,000
+Fourth, in general, the average of any function f(x), is given by the weighted integral of f(x) with P(x),
+
+47
+00:05:31,060 --> 00:05:36,080
+the appropriate weight for observing x.
+
+48
+00:05:36,080 --> 00:05:43,980
+Thus, we see that the average is just the first moment mu_1.
+
+49
+00:05:48,320 --> 00:05:52,820
+The variance, which is the square of the standard deviation,
+
+50
+00:05:52,820 --> 00:05:57,820
+is defined as the average squared fluctuation.
+
+51
+00:05:57,820 --> 00:06:04,260
+The variance can also be expressed in terms of the first two moments.
+
+52
+00:06:04,280 --> 00:06:08,840
+It is given by the difference between the second moment
+
+53
+00:06:08,860 --> 00:06:14,100
+and the square of the first moment.
+
+54
+00:06:14,120 --> 00:06:26,640
+Finally, the moment generating function G(k), is defined as the average of exp(-i k x).
+
+55
+00:06:26,680 --> 00:06:30,620
+Using the Taylor expansion for the exponential function,
+
+56
+00:06:30,620 --> 00:06:38,740
+we can express the generating function as a polynomial in k.
+
+57
+00:06:38,740 --> 00:06:41,420
+In particular, we see that
+
+58
+00:06:41,420 --> 00:06:47,980
+the coefficient of the n-th term is proportional to the n-th moment.
+
+59
+00:06:47,980 --> 00:06:56,760
+In other words, the n-th derivative of G, evaluated at k=0,
+
+60
+00:06:56,760 --> 00:07:00,860
+will give us the n-th moment.
+
+61
+00:07:05,160 --> 00:07:13,900
+Now, let us consider the case where our stochastic variable is not continuous, but discrete.
+
+62
+00:07:13,900 --> 00:07:19,400
+Assume that the possible outcomes are labeled by n,
+
+63
+00:07:19,440 --> 00:07:29,100
+which is a non-negative integer, namely 0, 1, 2, up to, N.
+
+64
+00:07:29,100 --> 00:07:38,520
+The discrete probability distribution P(n) gives the probability of observing n.
+
+65
+00:07:38,560 --> 00:07:47,240
+The properties of this distribution function are similar to the ones for the continuous case.
+
+66
+00:07:47,280 --> 00:07:55,040
+Mostly, they can be rewritten by changing integrals to sums.
+
+67
+00:07:55,040 --> 00:08:03,460
+First, all probabilities are positive, greater than or equal to zero,
+
+68
+00:08:03,460 --> 00:08:07,620
+and less than or equal to one.
+
+69
+00:08:07,620 --> 00:08:13,600
+Second, the sum of all probabilities is one.
+
+70
+00:08:13,600 --> 00:08:20,680
+Third, the m-th moment is defined as here.
+
+71
+00:08:20,680 --> 00:08:35,380
+Fourth, all averages are simply weighted sums, with P(n) the weight.
+
+72
+00:08:35,380 --> 00:08:39,720
+As expected, the definition of the variance is
+
+73
+00:08:39,780 --> 00:08:43,460
+the same as in the continuous case.
+
+74
+00:08:43,460 --> 00:08:54,500
+The generating function is again defined as the average of exp(-i k n).
+
+75
+00:08:54,580 --> 00:08:58,840
+In this case, it is convenient to consider it
+
+76
+00:08:58,860 --> 00:09:12,020
+as a complex function of z, where z=exp(-ik).
+
+77
+00:09:12,020 --> 00:09:18,520
+Derivatives of the generating function, evaluated at z=0,
+
+78
+00:09:18,520 --> 00:09:25,100
+will again be related to the moments mu_m.
+
+79
+00:09:25,100 --> 00:09:33,700
+Now, let us discuss one of the most common probability distributions in all of science.
+
+80
+00:09:33,740 --> 00:09:41,040
+The Gaussian or normal distribution, which has a characteristic bell-shaped function
+
+81
+00:09:41,040 --> 00:09:45,160
+that you are probably familiar with.
+
+82
+00:09:45,160 --> 00:09:52,780
+The probability distribution for a gaussian random variable is given in Eq. (C1).
+
+83
+00:09:52,780 --> 00:09:54,660
+As you can see,
+
+84
+00:09:54,660 --> 00:10:02,860
+it depends on only two parameters, x_0 and s.
+
+85
+00:10:02,860 --> 00:10:05,540
+It is easy to show that
+
+86
+00:10:05,580 --> 00:10:15,700
+these two parameters are precisely the average and standard deviation.
+
+87
+00:10:15,740 --> 00:10:22,560
+The plot on the right shows examples of Gaussian distributions
+
+88
+00:10:22,560 --> 00:10:26,620
+with changing standard deviation sigma.
+
+89
+00:10:26,620 --> 00:10:34,340
+As you can see, a larger value of sigma gives a broader or flatter distribution.
+
+90
+00:10:34,340 --> 00:10:42,680
+Roughly speaking, 2 sigma gives the width of the distribution at half maximum.
+
+91
+00:10:42,700 --> 00:10:56,100
+That is, the width at the point where the value of the distribution P(x) is half of the maximum value.
+
+92
+00:11:00,620 --> 00:11:07,860
+One example of a Gaussian distribution in physics is the maximum Boltzmann distribution
+
+93
+00:11:07,880 --> 00:11:14,060
+for the velocity of particles in a gas at thermal equilibrium.
+
+94
+00:11:14,100 --> 00:11:21,400
+Let V_alpha be the velocity components of any given particle.
+
+95
+00:11:21,460 --> 00:11:25,000
+Assume that all particles have the same mass,
+
+96
+00:11:25,000 --> 00:11:31,600
+and that the system has reached thermal equilibrium at a temperature T.
+
+97
+00:11:31,600 --> 00:11:35,940
+Here, k_B is Boltzmann's constant.
+
+98
+00:11:35,940 --> 00:11:40,680
+k_BT is the thermal energy.
+
+99
+00:11:40,680 --> 00:11:51,860
+The probability that a particle has a velocity V_alpha is given by a Gaussian distribution.
+
+100
+00:11:51,860 --> 00:11:53,580
+The average is zero,
+
+101
+00:11:53,600 --> 00:12:04,780
+as the particles are equally likely to move left or right.
+
+102
+00:12:04,780 --> 00:12:12,440
+The variance, by definition is proportional to the average kinetic energy.
+
+103
+00:12:12,460 --> 00:12:18,500
+From the equipartition theorem, we can then deduce that
+
+104
+00:12:18,520 --> 00:12:22,020
+the variance is proportional to the thermal energy
+
+105
+00:12:22,080 --> 00:12:28,020
+divided by twice the mass.
+
+106
+00:12:32,380 --> 00:12:38,500
+Now let us consider another common probability distribution,
+
+107
+00:12:38,560 --> 00:12:45,920
+this time for a discrete variable which has only two possible outcomes.
+
+108
+00:12:45,980 --> 00:12:51,920
+We can consider the random variable to be the outcome of a coin toss,
+
+109
+00:12:52,080 --> 00:12:59,860
+which gives heads with probability p, and tails with probability (1-p).
+
+110
+00:12:59,880 --> 00:13:04,280
+If we perform the measurement M times,
+
+111
+00:13:04,280 --> 00:13:08,500
+that is we toss the coin M times.
+
+112
+00:13:08,500 --> 00:13:16,240
+What is the probability that the result was heads a total of n times?
+
+113
+00:13:16,240 --> 00:13:26,200
+For example, imagine that we toss a fair coin with p = 0.5, 50 times.
+
+114
+00:13:26,200 --> 00:13:31,480
+We expect that heads will come up half of the time,
+
+115
+00:13:31,480 --> 00:13:36,300
+that is around 25 times.
+
+116
+00:13:36,300 --> 00:13:39,200
+If we do it 100 times,
+
+117
+00:13:39,200 --> 00:13:44,100
+we expect heads to come up around 50 times.
+
+118
+00:13:44,100 --> 00:13:48,500
+Note that we do not say that
+
+119
+00:13:48,500 --> 00:13:55,600
+heads should come up 'exactly' half of the time, every time.
+
+120
+00:13:55,620 --> 00:13:58,240
+Only that on average.
+
+121
+00:13:58,240 --> 00:14:02,340
+If we perform the experiment many times,
+
+122
+00:14:02,340 --> 00:14:06,400
+heads will come up half of the time.
+
+123
+00:14:06,400 --> 00:14:11,300
+The appropriate probability distribution for this process
+
+124
+00:14:11,300 --> 00:14:19,200
+is given by the Binomial distribution, Eq. (C6).
+
+125
+00:14:19,220 --> 00:14:23,680
+The average and variance can be easily calculated
+
+126
+00:14:23,680 --> 00:14:32,020
+and take the simple form shown in Eqs. (C7) and (C8).
+
+127
+00:14:34,860 --> 00:14:42,280
+In the figure, we have plotted the distribution for various values of p and M.
+
+128
+00:14:42,280 --> 00:14:52,120
+As expected, we see that the distribution is peaked near the average (=Mp).
+
+129
+00:14:56,340 --> 00:15:04,420
+Another common discrete distribution function is the Poisson distribution.
+
+130
+00:15:04,420 --> 00:15:12,200
+This distribution P(n) describes the probability of n "events"
+
+131
+00:15:12,200 --> 00:15:16,360
+occurring during a fixed time interval.
+
+132
+00:15:16,440 --> 00:15:23,200
+It is assumed that the expected value of occurrence,
+
+133
+00:15:23,260 --> 00:15:29,980
+that is the average number of events, is known and is a constant.
+
+134
+00:15:30,000 --> 00:15:36,500
+In addition, all events are assumed to be independent of each other.
+
+135
+00:15:36,500 --> 00:15:44,440
+Examples of this type of process include the distribution of earthquakes,
+
+136
+00:15:44,440 --> 00:15:55,060
+the arrival of customers at the post office or the number of mutations in a strand DNA.
+
+137
+00:15:55,060 --> 00:16:05,100
+The Poisson distribution is given in Eq. (C9).
+
+138
+00:16:05,100 --> 00:16:11,600
+In the figure, we plot the distribution for various values of 'a.'
+
+139
+00:16:11,960 --> 00:16:22,880
+As we can see, it depends on only one parameter, "a,"
+
+140
+00:16:22,880 --> 00:16:25,780
+which is the expected value.
+
+141
+00:16:26,160 --> 00:16:36,780
+The average, variance, and generating functions all take very simple forms.
+
+142
+00:16:36,780 --> 00:16:39,840
+In particular, we see that
+
+143
+00:16:39,840 --> 00:16:46,160
+the average and the variance are both equal to "a,"
+
+144
+00:16:46,160 --> 00:16:50,800
+the expected value.
+
+145
+00:16:50,820 --> 00:16:56,380
+Here, imagine that P(n) gives the probability
+
+146
+00:16:56,380 --> 00:17:06,880
+that n customers walk into the post office in one hour.
+
+147
+00:17:06,880 --> 00:17:12,980
+Now, let us see how the distribution functions we introduced before
+
+148
+00:17:12,980 --> 00:17:15,800
+are related to each other.
+
+149
+00:17:15,800 --> 00:17:18,160
+In the supplemental material,
+
+150
+00:17:18,160 --> 00:17:27,980
+I give you the derivation showing the equivalence of the binomial distribution and the Gaussian distribution,
+
+151
+00:17:28,020 --> 00:17:37,000
+in the limit when "n" and M are both much larger than one.
+
+152
+00:17:37,040 --> 00:17:44,140
+The average and variance that should be used in the Gaussian distribution are
+
+153
+00:17:44,140 --> 00:17:51,720
+simply given by the corresponding values of the original binomial distribution.
+
+154
+00:17:51,720 --> 00:17:55,340
+This is simply, this is very convenient,
+
+155
+00:17:55,340 --> 00:18:00,500
+as it is easier to work with a Gaussian function, Eq. (C1)
+
+156
+00:18:00,500 --> 00:18:08,480
+than it is to work with the binomial distribution.
+
+157
+00:18:08,480 --> 00:18:12,600
+Consider again the coin toss experiment.
+
+158
+00:18:12,600 --> 00:18:17,800
+We toss the coin a very large number of times.
+
+159
+00:18:17,820 --> 00:18:22,280
+To find the probability that n heads were obtained,
+
+160
+00:18:22,300 --> 00:18:33,380
+we can use the Gaussian distribution, but only if n is itself very large.
+
+161
+00:18:33,400 --> 00:18:41,800
+If we want to ask for the probability to obtain only a few heads after very many throws,
+
+162
+00:18:41,860 --> 00:18:44,540
+the equivalence does not hold,
+
+163
+00:18:44,540 --> 00:18:58,300
+and in this case we must use the original binomial distribution, Eq. (C6).
+
+164
+00:18:58,300 --> 00:19:01,880
+We have seen that under certain conditions
+
+165
+00:19:01,880 --> 00:19:06,480
+the binomial and Gaussian distributions are equivalent.
+
+166
+00:19:06,480 --> 00:19:10,160
+It turns out that under different conditions,
+
+167
+00:19:10,160 --> 00:19:16,440
+the binomial distribution can be shown to be equal to the Poisson distribution.
+
+168
+00:19:16,440 --> 00:19:22,300
+For this, we must consider the limit when M is very large,
+
+169
+00:19:22,340 --> 00:19:26,700
+but now we assume that Mp stays constant,
+
+170
+00:19:26,700 --> 00:19:30,560
+and we make no assumptions about n.
+
+171
+00:19:30,560 --> 00:19:36,060
+This means that in the limit when M becomes bigger and bigger,
+
+172
+00:19:36,080 --> 00:19:44,420
+p must become smaller and smaller, in such a way that their product is constant.
+
+173
+00:19:44,420 --> 00:19:52,480
+It is in this limit where the binomial and Poisson distributions are equivalent.
+
+174
+00:19:52,480 --> 00:19:56,180
+The derivation is too involved to show here,
+
+175
+00:19:56,180 --> 00:20:00,760
+but it is available as a supplemental note.
+
+176
+00:20:00,760 --> 00:20:07,820
+Finally, we note that the parameter 'a' of the Poisson distribution is
+
+177
+00:20:07,820 --> 00:20:15,840
+determined by the average of the binomial distribution.
+
+178
+00:20:15,840 --> 00:20:21,460
+This immediately determines the variance of the distribution.
+
