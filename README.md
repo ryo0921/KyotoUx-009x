@@ -21,5 +21,5 @@ How to follow each lesson
   Refer to one of the Notebooks provided via nbviewer, github, pdf, and/or pptx while watching the video.
   You can type the code and commands (or copy and paste from the Notebook to the corresponding cells) directly in the blank jupyter notebook to reproduce the code presented in class.
   
-  Let's enjoy the course!
+Let's enjoy the course!
   
