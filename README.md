@@ -2,7 +2,7 @@
 
 Here we provide with all necessary files to enrole "KyotoUx-009x: Stochastic Processes: Data Analysis and Computer Simulation".
 
-Contents
+Contents (files will be uploaded week by week)
 - 01: files for Week 1
 - 02: files for Week 2
 - 03: files for Week 3
