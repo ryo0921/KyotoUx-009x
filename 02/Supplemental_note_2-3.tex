@@ -4,10 +4,10 @@
 \usepackage{amssymb}
 \begin{document}
 \begin{center}
-  {\LARGE\bf Supplemental note}
+  {\LARGE\bf Supplemental note for Week 2 Part 3}
   \end{center}
 \begin{flushright}
-  {\large\bf ver. 20170209-01}\\
+  {\large\bf ver. 20170418-01}\\
  \ \\
 {\large\bf Ryoichi Yamamoto}\\
 \end{flushright}
@@ -33,10 +33,9 @@ When $n$ and $M$ are both large, the peak in $P(n)$ and also in $\ln P(n)$ is ve
 \begin{eqnarray}
   \left.\frac{d \ln P}{dn}\right|_{n=\langle N\rangle} &=&\ln \left[\frac{M-\langle N\rangle}{\langle N\rangle} \right] - \ln \left[\frac{1-p}{p} \right] =0\\
   \therefore \frac{M-\langle N\rangle}{\langle N\rangle} &=& \frac{1-p}{p} \\
-  \langle N\rangle&=&Mp
+  \langle N\rangle&=&Mp.
 \end{eqnarray}
-
-
+\\
 Consider a Taylor expansion of $\ln P(n)$ around the mean $\langle N\rangle$ by defining $n=\langle N\rangle+\delta n$.
 \begin{equation}
   \ln P(n) = \ln (\langle N\rangle) + \left.\frac{d \ln P}{dn}\right|_{n=\langle N\rangle}\delta n
@@ -45,9 +44,9 @@ Consider a Taylor expansion of $\ln P(n)$ around the mean $\langle N\rangle$ by 
 From Eq.(7),
 \begin{eqnarray}
   \frac{d^2 \ln P}{dn^2}&=&-\frac{1}{n}-\frac{1}{M-n}\\
-  \left.\frac{d^2 \ln P}{dn^2}\right|_{n=\langle N\rangle}&=&-\frac{1}{Mp}-\frac{1}{M-Mp}=-\frac{1}{Mp(1-p)}=-\sigma^{-2}
+  \left.\frac{d^2 \ln P}{dn^2}\right|_{n=\langle N\rangle}&=&-\frac{1}{Mp}-\frac{1}{M-Mp}=-\frac{1}{Mp(1-p)}=-\sigma^{-2}.
 \end{eqnarray}
-Terminate Eq.(12) at the 2nd order in terms of  $\delta n$, and use Eqs.(9) and (14). 
+Terminate Eq.(12) at the 2nd order in terms of  $\delta n$, and use Eqs.(9) and (14).
 \begin{equation}
 P(n)=const.\times\exp\left(-\frac{\delta n^2}{2\sigma^2}\right)
 \end{equation}
@@ -74,7 +73,7 @@ with $\langle N\rangle=Mp=a$ and $\sigma^2=Mp(1-p)\simeq a$.
 \end{eqnarray}
 Here we used
 \begin{equation}
-\lim_{M\rightarrow \infty}\left(1-\frac{a}{M}\right)^M= e^{-a}
+\lim_{M\rightarrow \infty}\left(1-\frac{a}{M}\right)^M= e^{-a}.
 \end{equation}
 \end{document}
 
