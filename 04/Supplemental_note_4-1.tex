@@ -1,0 +1,97 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{a4wide}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\begin{document}
+\begin{center}
+  {\LARGE\bf Supplemental note for Week 4 Part 1}
+  \end{center}
+\begin{flushright}
+  {\large\bf ver. 20170416-01}\\
+ \ \\
+{\large\bf Ryoichi Yamamoto}\\
+\end{flushright}
+
+\section{Average and variance of the cumulative impulse $\Delta\mathbf{W}_i$}
+
+Let us start with the Langevin equation
+\begin{equation}
+m\frac{d\mathbf{V}(t)}{dt}={-\zeta\mathbf{V}(t)}+{\mathbf{F}(t)},
+\tag{F2}
+\end{equation}
+where the random force $\mathbf{F}(t)$ satisfies the following conditions
+\begin{equation}
+\langle \mathbf{F}(t)\rangle=\mathbf{0}
+\tag{F3}
+\end{equation}
+\begin{equation}
+\langle \mathbf{F}(t)\mathbf{F}(0)\rangle = {2k_B T\zeta}\mathbf{I}\delta(t),\tag{F4}
+\end{equation}
+with
+$\mathbf{0}\equiv(0,0,0)$ and $\mathbf{I}\equiv\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}$.\\
+We now discretize the time $t$ using an increment $\Delta t$, such that
+$t_i\equiv i\Delta t$, and define the cumulative impulse during the
+interval $t_i\le t\le t_{i+1} = t_i + \Delta t$, as
+\begin{equation}
+\Delta\mathbf{W}_i
+\equiv\int_{t_i}^{t_{i+1}} dt\mathbf{F}(t).
+\tag{F8}
+\end{equation}
+From Eq.(F3), it is straightforward to show
+\begin{equation}
+\langle\Delta\mathbf{W}_i\rangle
+=\int_{t_i}^{t_{i+1}} dt\langle\mathbf{F}(t)\rangle=\mathbf{0}.
+\tag{F10}
+\end{equation}
+Also from Eq.(F4), for $j\ne i$
+\begin{eqnarray}
+\langle\Delta\mathbf{W}_i\Delta\mathbf{W}_{j\ne i}\rangle
+&=&\int_{t_i}^{t_{i+1}} dt\int_{t_j}^{t_{j+1}} dt'\langle\mathbf{F}(t)\mathbf{F}(t')\rangle\\
+&=&2k_B T\zeta\mathbf{I} \int_{t_i}^{t_{i+1}} dt\int_{t_j}^{t_{j+1}} dt'
+\delta(t-t')\\
+&=&\mathbf{O},
+\end{eqnarray}
+where $\mathbf{O}\equiv\begin{bmatrix}0&0&0\\0&0&0\\0&0&0\end{bmatrix}$.\\
+For $j=i$
+\begin{eqnarray}
+\langle\Delta\mathbf{W}_i\Delta\mathbf{W}_i\rangle
+&=&\int_{t_i}^{t_{i+1}} dt\int_{t_i}^{t_{i+1}} dt'\langle\mathbf{F}(t)\mathbf{F}(t')\rangle\\
+&=&2k_B T\zeta\mathbf{I} \int_{t_i}^{t_{i+1}} dt\int_{t_i}^{t_{i+1}} dt'
+\delta(t-t')\\
+&=&2k_B T\zeta\Delta t\mathbf{I}.
+\end{eqnarray}
+Combining Eqs.(3) and (6), we obtain
+\begin{equation}
+\langle \Delta \mathbf{W}_i\Delta \mathbf{W}_j\rangle = {2k_B T\zeta}\Delta t\mathbf{I}\delta_{ij} .
+\tag{F11}
+\end{equation}
+
+%\newpage
+\section{Distribution of $\Delta\mathbf{W}_i$}
+
+Here we further divide $\Delta t$ into $n$ segments ($n\gg1$) of a
+very small time span $\epsilon$, {\it i.e.}, $\Delta t \equiv n\epsilon$, and 
+define a new cumulative impulse over $\epsilon$
+\begin{equation}
+\mathbf{W}^m_i
+\equiv\int_{t_i+(m-1)\epsilon}^{t_{i}+m\epsilon} dt\mathbf{F}(t),
+\end{equation}
+where $1\le m\le n$.\\
+Repeating the same procedure performed in the previous section, the following conditions are derived.
+\begin{eqnarray}
+\langle\mathbf{W}^m_i\rangle&=&\mathbf{0}\\
+\langle \mathbf{W}^m_i\mathbf{W}^l_j\rangle &=& {2k_B T\zeta}\epsilon\mathbf{I}\delta_{ij}\delta_{ml}
+\end{eqnarray}
+Eqs.(8) and (9) show that the mean and variance of the random numbers $W^m_{\alpha,i}$ $(\alpha\in x,y,z)$ are zero and $2k_B T\zeta\epsilon$, respectively. \\
+From Eq.(F8) and (7), we should notice that
+\begin{equation}
+\Delta\mathbf{W}_i
+=\mathbf{W}^1_i+\mathbf{W}^2_i+\cdots+\mathbf{W}^n_i.
+\end{equation}
+Therefore, from the central limit theorem Eqs.(D7)-(D9) introduced in
+Part 3 of Week 2, one realizes that the $\Delta W_{\alpha,i}$ should be
+drawn from a \textit{Gaussian} distribution, with average and variance
+equal to zero and $2k_B T\zeta\Delta t$, respectively, regardless of the
+distribution of the $W^m_{\alpha,i}$.
+\end{document}
+
