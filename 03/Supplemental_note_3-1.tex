@@ -20,10 +20,10 @@ For $\mathbf{A}=(A_x, A_y,A_z)$ and  $\mathbf{B}=(B_x, B_y,B_z)$
 \subsection{Dot product (=scalar)}
 
 $$
-\mathbf{A}\cdot\mathbf{B}=A_xB_x+A_yB_y+A_zB_z.
+\mathbf{A}\cdot\mathbf{B}=A_xB_x+A_yB_y+A_zB_z=S
 $$
 
-Equivalent Einstein convention: $A_\alpha B_\alpha$
+Equivalent Einstein convention: $S=A_\alpha B_\alpha$
 
 \subsection{Cross product (=vector)}
 
@@ -33,15 +33,16 @@ $$
       A_xB_z -  A_zB_x ,
       A_xB_y -  A_yB_x 
 )
+=(V_x,V_y,V_z)
 $$
 
-Equivalent Einstein convention: $\epsilon_{\alpha,\beta,\gamma}A_\beta B_\gamma$, where $\epsilon_{\alpha,\beta,\gamma}$ is the Levi-Civita Symbol
+Equivalent Einstein convention: $V_\alpha=\epsilon_{\alpha,\beta,\gamma}A_\beta B_\gamma$, where $\epsilon_{\alpha,\beta,\gamma}$ is the Levi-Civita Symbol
 $$
 \epsilon_{\alpha,\beta,\gamma}=
 \begin{cases}
     +1\ \ \ \ \ {\rm if\ ({\it \alpha,\beta,\gamma})=(x,y,z),\ (y,z,x),\ or\ (z,x,y)}\\
     -1 \ \ \ \ \ {\rm if\ ({\it \alpha,\beta,\gamma})=(z,y,x),\ (y,x,z),\ or\ (x,z,y)}\\
-    0\ \ \ \ \ \ \ \ {\rm if}\ \alpha=\beta,\ \alpha=\gamma,\ or\ \beta=\gamma
+    0\ \ \ \ \ \ \ \ {\rm if}\ \alpha=\beta,\ \alpha=\gamma,\ {\rm or}\ \beta=\gamma
 \end{cases}
 $$
 
@@ -54,9 +55,15 @@ $$
       A_yB_x & A_yB_y & A_yB_z \\
       A_zB_x & A_zB_y & A_zB_z
 \end{array}\right)
+=\left(
+\begin{array}{ccc}
+      M_{xx} & M_{xy} & M_{xz} \\
+      M_{yx} & M_{yy} & M_{yz} \\
+      M_{zx} & M_{zy} & M_{zz}
+\end{array}\right)
 $$
 
-Equivalent Einstein convention: $A_\alpha B_\beta$
+Equivalent Einstein convention: $M_{\alpha\beta}=A_\alpha B_\beta$
 
 
 \end{document}
