@@ -1,0 +1,151 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{a4wide}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\begin{document}
+\begin{center}
+  {\LARGE\bf Supplemental note for Week 5 Part 1}
+  \end{center}
+\begin{flushright}
+  {\large\bf ver. 20170417-01}\\
+ \ \\
+{\large\bf Ryoichi Yamamoto}\\
+\end{flushright}
+
+\section{Langevin Eq. $\rightarrow$ Fokker-Planck Eq.}
+
+Let us start with the Langevin equation for a Brownian particle
+\begin{equation}
+m\frac{d\mathbf{V}(t)}{dt}=-\zeta\mathbf{V}(t)+\mathbf{F}(t),\tag{F2}
+\end{equation}
+where the random force satisfies
+\begin{equation}
+\langle\mathbf{F}(t)\rangle=\mathbf{0}\tag{F3}
+\end{equation}
+\begin{equation}
+\langle\mathbf{F}(t)\mathbf{F}(0)\rangle=2k_BT\zeta\mathbf{I}\delta(t).\tag{F4}
+\end{equation}
+To derive a useful partial differential equation for the probability
+distribution functions, we redefine the
+Langevin equation in the following 1-dimensional form, assuming that the particle is subject to a conservative force $F_p(R(t),t)=-\frac{\partial U}{\partial R}$ due to a potential $U(R(t),t)$,
+\begin{eqnarray}
+m\frac{dV(t)}{dt}&=&-\zeta V(t)+F(t)+F_{p}(R(t),t),
+\end{eqnarray}
+where $R(t)$ represents the position of the Brownian particle at time $t$.
+\\
+Hereafter, we neglect the inertial term $m\frac{dV}{dt}\simeq 0$, since
+we are mainly interested in the long-time behavior
+$t\gg\frac{\zeta}{m}$ of the Brownian particle.
+We thus obtain the overdamped Langevin equation,
+\begin{eqnarray}
+0&=&-\zeta V(t)+F(t)+F_{p}(R(t),t)\\
+V(t)=\frac{dR(t)}{dt}&=&\frac{F_p(R(t),t)}{\zeta}+\frac{F(t)}{\zeta}.
+\end{eqnarray}
+Let us now rewrite this equation (3) in the following more general
+form (making the substitution $R(t)\longrightarrow r(t)$)
+\begin{equation}
+\frac{dr(t)}{dt}=f(r(t),t)+g\eta(t),
+\end{equation}
+where $f$ is an arbitrary function of $r(t)$ and $t$, $g$ is a
+constant, and $\eta(t)$ is a Gaussian white noise random variable with
+\begin{eqnarray}
+\langle\eta(t)\rangle&=&0\\
+\langle\eta(t)\eta(t')\rangle&=&\delta(t-t').
+\end{eqnarray}
+Integration of Eq.(4) from $t=t_i$ to $t_{i+1}=t_i+\Delta t$, yields 
+\begin{eqnarray}
+r(t_{i+1})-r(t_i)&=& \int_{t_i}^{t_{i+1}}f(r(t),t)dt + g\int_{t_i}^{t_{i+1}}\eta(t)dt\\
+&\simeq& f(r(t_i),t_i)\Delta t + g\sqrt{\Delta t}\tilde{\eta}(t_i),
+\end{eqnarray}
+with
+\begin{eqnarray}
+\langle\tilde{\eta}(t)\rangle&=&0\\
+\langle\tilde{\eta}(t_i)\tilde{\eta}(t_j)\rangle&=&\delta_{ij}
+\end{eqnarray}
+(see Eq.(F11) and the supplemental note for Week 4 Part 1).
+\\
+We now consider a general function $p\left[r(t)\right]$ of $r(t)$ and
+make a Taylor expansion of it in terms of $\Delta t$, keeping only the
+terms equal to and lower than the first-order in $\Delta t$
+\begin{eqnarray}
+p\left[r(t_{i+1})\right]&=&p\left[r(t_i)+f(r(t_i),t_i)\Delta t + g\sqrt{\Delta t}\tilde{\eta}(t_i)\right]\\
+&\simeq&
+p\left[r(t_{i})\right]+\dot{p}\left[r(t_{i})\right]
+\left(f(r(t_i),t_i)\Delta t+g\sqrt{\Delta t}\tilde{\eta}(t_i)\right)\nonumber\\
+&&+\frac{\ddot{p}\left[r(t_{i})\right]}{2}\left(f(r(t_i),t_i)\Delta t+g\sqrt{\Delta t}\tilde{\eta}(t_i)\right)^2+\cdots\\
+&\simeq&
+p\left[r(t_{i})\right]
++\dot{p}\left[r(t_{i})\right]g\tilde{\eta}(t_i)\Delta t^{0.5}
++\dot{p}\left[r(t_{i})\right]f(r(t_i),t_i)\Delta t\nonumber\\
+&&+\frac{\ddot{p}\left[r(t_{i})\right]}{2}g^2\tilde{\eta}^2(t_i)\Delta t+{\cal O}(\Delta t^{1.5}),
+\end{eqnarray}
+where $\dot{p}\left[r(t_{i})\right]\equiv\left.\frac{dp}{dr}\right|_{r=r(t_{i})}$ and
+$\ddot{p}\left[r(t_{i})\right]\equiv\left.\frac{d^2p}{dr^2}\right|_{r=r(t_{i})}$.
+\\
+Moving $p\left[r(t_{i})\right]$ to the left-hand-side, dividing by
+$\Delta t$, and taking a statistical average, we obtain 
+\begin{eqnarray}
+\left\langle\frac{p\left[r(t_{i+1})\right]-p\left[r(t_i)\right]}{\Delta t}\right\rangle
+&=&
+\left\langle \dot{p}\left[r(t_{i})\right]g\tilde{\eta}(t_i)\Delta t^{-0.5}\right\rangle
++\left\langle \dot{p}\left[r(t_{i})\right]f(r(t_i),t_i)\right\rangle\nonumber\\
+&&+\left\langle\frac{\ddot{p}\left[r(t_{i})\right]}{2}g^2\tilde{\eta}^2(t_i)\right\rangle\\
+&=&
+\left\langle \dot{p}\left[r(t_{i})\right]\right\rangle g\left\langle\tilde{\eta}(t_i)\right\rangle\Delta t^{-0.5}
++\left\langle \dot{p}\left[r(t_{i})\right]f(r(t_i),t_i)\right\rangle\nonumber\\
+&&+\left\langle\frac{\ddot{p}\left[r(t_{i})\right]}{2}g^2\right\rangle\left\langle\tilde{\eta}^2(t_i)\right\rangle
+\end{eqnarray}
+Substituting $\langle\tilde{\eta}(t_i)\rangle=0$ and $\langle\tilde{\eta}^2(t_i)\rangle=1$, and then taking the limit of $\Delta t\rightarrow 0$, one finally obtains
+\begin{equation}
+  \left\langle\frac{dp(r(t))}{dt}\right\rangle
+  =\left\langle \dot{p}(r(t)f(r(t),t)\right\rangle+\left\langle\frac{\ddot{p}(r(t))}{2}g^2\right\rangle
+\end{equation}
+\\
+Using the definition of a statistical average in terms of the
+probability distribution function $P(r,t)$, we have
+\begin{equation}
+\left\langle p(r(t))\right\rangle=\int P(r,t)p(r)dr.
+\end{equation}
+The corresponding expressions for each of the terms appearing in
+Eq.(16) are
+\begin{eqnarray}
+\left\langle \frac{dp(r(t))}{dt}\right\rangle&=&\frac{\partial}{\partial t}\int P(r,t)p(r)dr\\
+\left\langle \dot{p}(r(t)f(r(t),t)\right\rangle&=&\int P(r,t)\dot{p}(r)f(r,t)dr\\
+\left\langle \frac{\ddot{p}(r(t))}{2}g^2\right\rangle&=&\int P(r,t)\frac{\ddot{p}(r)}{2}g^2dr.
+\end{eqnarray}
+In the case that 
+$p(r(t))=\delta(r(t)-R)$, the above averages can be calculated as follows,
+\begin{eqnarray}
+\left\langle \frac{dp(r(t))}{dt}\right\rangle&=&\frac{\partial}{\partial t}\int P(r,t)\delta(r-R)dr=\frac{\partial}{\partial t}P(R,t)\\
+\left\langle \dot{p}(r(t)f(r(t),t)\right\rangle&=&\int P(r,t)\frac{d}{dr}\delta(r-R)f(r,t)dr\\
+&=&-\int \frac{d}{dr}\left(P(r,t)f(r,t)\right)\delta(r-R)dr\\
+&=&-\frac{\partial}{\partial  R}\left(P(R,t)f(R,t)\right)\\
+\left\langle \frac{\ddot{p}(r(t))}{2}g^2\right\rangle&=&\int P(r,t)\frac{g^2}{2}\frac{d^2}{dr^2}\delta(r-R)dr\\
+&=&\int \delta(r-R)\frac{d^2}{dr^2}P(r,t)\frac{g^2}{2}dr\\
+&=&\frac{g^2}{2}\frac{\partial}{\partial R^2}P(R,t).
+\end{eqnarray}
+Finally, substituting the above expression into Eq.(16) yields the Fokker-Planck equation shown below
+\begin{equation}
+\frac{\partial}{\partial t}P(R,t)=-\frac{\partial}{\partial  R}\left(P(R,t)f(R,t)\right)
++\frac{g^2}{2}\frac{\partial}{\partial R^2}P(R,t).
+\end{equation}
+\\
+We can recover the original Langevin equation by changing variables as follows
+\begin{eqnarray}
+R&=&R_\alpha\\
+f(R,t)&=&0\\
+g^2&=&\frac{2k_BT}{\zeta}=2D,
+\end{eqnarray}
+then, the Fokker-Planck equation takes the usual form of a diffusion equation
+\begin{equation}
+\frac{\partial}{\partial t}P(R_\alpha,t)=
+D\frac{\partial}{\partial R_\alpha^2}P(R_\alpha,t).
+\end{equation}
+Solving this with an initial condition $P(R_\alpha,t)=\delta(R_\alpha)$, yields 
+\begin{eqnarray}
+  P(R_\alpha,t)&=&\frac{1}{\sqrt{4\pi Dt}}\exp\left[-\frac{R_\alpha^2}{4Dt}\right]\\
+  &=&\frac{1}{\sqrt{2\pi \sigma^2}}\exp\left[-\frac{R_\alpha^2}{2\sigma^2}\right]
+\end{eqnarray}
+with $\sigma^2=\frac{2k_BT t}{\zeta}=2Dt$.
+This is equivalent to Eq.(G1)-(G3).
+\end{document}
