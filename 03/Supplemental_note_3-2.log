@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.30)  8 JAN 2018 10:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.1.8)  8 JAN 2018 21:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **Supplemental_note_3-2.tex
 (./Supplemental_note_3-2.tex
 LaTeX2e <2017-04-15>
-Babel <3.14> and hyphenation patterns for 84 language(s) loaded.
+Babel <3.16> and hyphenation patterns for 84 language(s) loaded.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/size11.clo
@@ -126,10 +126,10 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 (./Supplemental_note_3-2.aux) ) 
 Here is how much of TeX's memory you used:
- 1154 strings out of 492990
- 13407 string characters out of 6132635
- 73130 words of memory out of 5000000
- 4742 multiletter control sequences out of 15000+600000
+ 1154 strings out of 492980
+ 13407 string characters out of 6132510
+ 74232 words of memory out of 5000000
+ 4752 multiletter control sequences out of 15000+600000
  11033 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  27i,10n,26p,237b,123s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -143,7 +143,7 @@ ic/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public
 msfonts/cm/cmr6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmsy10.pfb>
-Output written on Supplemental_note_3-2.pdf (1 page, 82545 bytes).
+Output written on Supplemental_note_3-2.pdf (1 page, 83923 bytes).
 PDF statistics:
  44 PDF objects out of 1000 (max. 8388607)
  31 compressed objects within 1 object stream

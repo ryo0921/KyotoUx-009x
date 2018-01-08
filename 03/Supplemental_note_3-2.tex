@@ -16,7 +16,12 @@
 \section{Derivation of the mean square displacement}
 
 \begin{eqnarray}
-\langle |\Delta {\bf R}(t)|^2\rangle 
+\left\langle |\Delta {\bf R}(t)|^2\right\rangle 
+&=& \left\langle\int_{0}^{t}d t_1 {\bf V}(t_1)\cdot\int_{0}^{t}d t_2  {\bf V}(t_2)\right\rangle \\
+&=& \int_{0}^{t}d t_1 \int_{0}^{t}d t_2 \left\langle{\bf V}(t_1)\cdot {\bf V}(t_2)\right\rangle \\
+&=&
+\int_{0}^{t}d t_1 \int_{0}^{t}d t_2 
+\frac{3\tilde{D}}{\zeta m} \exp\left(-\frac{\zeta}{m}|t_2-t_1|\right)\\
 &=&2
 \int_{0}^{t}d t_1 \int_{t_1}^{t}d t_2 
 \frac{3\tilde{D}}{\zeta m} \exp\left(-\frac{\zeta}{m}(t_2-t_1)\right)\\
