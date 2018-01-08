@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.30)  7 JAN 2018 16:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.30)  8 JAN 2018 10:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -128,7 +128,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 Here is how much of TeX's memory you used:
  1154 strings out of 492990
  13407 string characters out of 6132635
- 72130 words of memory out of 5000000
+ 73130 words of memory out of 5000000
  4742 multiletter control sequences out of 15000+600000
  11033 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -143,7 +143,7 @@ ic/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public
 msfonts/cm/cmr6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmsy10.pfb>
-Output written on Supplemental_note_3-2.pdf (1 page, 82133 bytes).
+Output written on Supplemental_note_3-2.pdf (1 page, 82545 bytes).
 PDF statistics:
  44 PDF objects out of 1000 (max. 8388607)
  31 compressed objects within 1 object stream
